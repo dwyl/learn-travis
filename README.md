@@ -43,7 +43,8 @@ simply visit: https://github.com/settings/applications and click on *Revoke*.
 
 #### Background Reading
 
-- Continuous Integration Wikipedia Article - http://en.wikipedia.org/wiki/Continuous_integration
+- Continuous Integration Wikipedia Article: http://en.wikipedia.org/wiki/Continuous_integration
+- CI Beginners Guide Video: https://vimeo.com/19596466
 
 #### Travis Specific
 
@@ -59,4 +60,10 @@ simply visit: https://github.com/settings/applications and click on *Revoke*.
 - Lars Vogel Jenkins Tutorial: http://www.vogella.com/articles/Jenkins/article.html
 - This is why I avoid Java: http://www.cvedetails.com/vulnerability-list/vendor_id-5/product_id-1526/
 by comparison, Node.js: http://www.cvedetails.com/vulnerability-list/vendor_id-12113/product_id-22804/opginf-1/Nodejs-Nodejs.html
+
+#### Future
+
+- **ALL** The Diagrams on Google Image Search for Continuous Integration are terrible!
+https://www.google.com/search?q=continuous+integration&source=lnms&tbm=isch I either need
+to make time to draw one or ask someone to do one.
 
