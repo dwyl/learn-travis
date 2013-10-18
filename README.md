@@ -5,7 +5,9 @@ A quick Travis CI (Continuous Integration) Tutorial for Node.js developers
 
 - - -
 
-Todo: need to find a good intro image.
+![Toilet Roll Blocks Seat FAIL](https://raw.github.com/nelsonic/learn-travis/master/images/Roll-Blocks-Toilet-Seat.jpg Toilet Roll Blocks Seat from Closing. Fail!)
+
+Sometimes it pays to *fully* test things before deploying them.
 
 > Continuous integration is a process in which all development work 
 > is integrated at a predefined time or event and the resulting work 
@@ -27,7 +29,7 @@ Following the [Travis Getting Started](http://about.travis-ci.org/docs/user/gett
 
 > Visit: https://travis-ci.org/ and click "**Sign in with GitHub**"
 
-
+![Travis Login with GitHub](https://raw.github.com/nelsonic/learn-travis/master/images/Travis-login-with-github.png Sign in with GitHub)
 
 
 
