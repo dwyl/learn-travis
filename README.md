@@ -21,9 +21,9 @@ The [Travis Getting Started] guide
 ### Notes:
 
 
-- [CI Wikipedia Article] : http://en.wikipedia.org/wiki/Continuous_integration
-- [Jenkins/Hudson CI] : http://jenkins-ci.org/
-- [@groupon] : http://www.linkedin.com/in/nelsonic  
-- [Travis Getting Started] : http://about.travis-ci.org/docs/user/getting-started/
+- [CI Wikipedia Article]: http://en.wikipedia.org/wiki/Continuous_integration
+- [Jenkins/Hudson CI]: http://jenkins-ci.org/
+- [@groupon]: http://www.linkedin.com/in/nelsonic  
+- [Travis Getting Started]: http://about.travis-ci.org/docs/user/getting-started/
 - [@sayanee Build Podcast](https://github.com/sayanee/build-podcast/tree/master/032-travisci)
 - [Build Podcast Ep.32 Video](http://build-podcast.com/travisci/)
