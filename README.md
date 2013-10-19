@@ -48,7 +48,7 @@ where you will see the Welcome screen:
 > 4. Next you need to enable a specific Git Repository in your Tavis Profile:
 https://travis-ci.org/profile
 
-![Enable Repo in Travis](04-Travis-profile-enable-repo.png "Travis Enable Repo")
+![Enable Repo in Travis](https://raw.github.com/nelsonic/learn-travis/master/images/04-Travis-profile-enable-repo.png "Travis Enable Repo")
 
 
 
