@@ -154,8 +154,19 @@ Travis will download all the modules listed in your *devDependencies*
 and attempt to run your test script **grunt travis --verbose**
 
 In our case we are only asking travis to **lint** the **hello.js** file.
-and since 
+and since the file was missing a semi-colon on the 4th line above,
+it will fail the lint and thus the build process fails!
 
+![Travis Build Failing](https://raw.github.com/nelsonic/learn-travis/master/images/06-travis-build-failing.png "Travis Build Failing")
+
+![Travis Build Failing Error Message](https://raw.github.com/nelsonic/learn-travis/master/images/05-travis-ci-lint-build-fails.png "Travis Build Failing Error Message")
+
+On **line 343** we are missing a semi-colon.
+
+
+### Correct Code To Pass Build
+
+Simply add the simi-colon to the 4th line and commit your changes.
 
 [![Build Status](https://travis-ci.org/nelsonic/learn-travis.png?branch=master)](https://travis-ci.org/nelsonic/learn-travis)
 
