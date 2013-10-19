@@ -166,7 +166,16 @@ On **line 343** we are missing a semi-colon.
 
 ### Correct Code To Pass Build
 
-Simply add the simi-colon to the 4th line and commit your changes.
+Simply add the simi-colon to the 4th line of **hello.js** and commit your changes:
+
+```javascript
+var http = require('http');
+http.createServer(function (req, res) {
+  res.writeHead(200, {'Content-Type': 'text/plain'});
+  res.end('Hello Travis!\n'); // build should pass now!
+}).listen(1337, '127.0.0.1');
+console.log('Server running at http://127.0.0.1:1337/');
+```
 
 [![Build Status](https://travis-ci.org/nelsonic/learn-travis.png?branch=master)](https://travis-ci.org/nelsonic/learn-travis)
 
@@ -175,6 +184,7 @@ Simply add the simi-colon to the 4th line and commit your changes.
 - - -
 
 > Todo: update this tutorial to not use grunt.js to de-couple the tutorials.
+> Todo: create a more realistic test that does something useful.
 
 - - -
 
