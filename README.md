@@ -170,6 +170,14 @@ Simply add the simi-colon to the 4th line and commit your changes.
 
 [![Build Status](https://travis-ci.org/nelsonic/learn-travis.png?branch=master)](https://travis-ci.org/nelsonic/learn-travis)
 
+![Travis Build Passing](https://raw.github.com/nelsonic/learn-travis/master/images/07-travis-build-passing.png "Travis Build Passing")
+
+- - -
+
+> Todo: update this tutorial to not use grunt.js to de-couple the tutorials.
+
+- - -
+
 
 ### Notes:
 
