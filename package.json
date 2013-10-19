@@ -1,5 +1,9 @@
 {
   "name": "learn-travis",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/nelsonic/learn-travis.git"
+  },
   "description": "Simple nodejs, travis and grunt demo",
   "author": "https://twitter.com/nelsonic",
   "version": "0.0.1",
@@ -8,11 +12,5 @@
   },
   "scripts": {
     "test": "grunt travis --verbose"
-  },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/nelsonic/learn-travis.git"
   }
 }
-
-
