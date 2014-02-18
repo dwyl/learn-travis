@@ -1,5 +1,6 @@
 learn-travis
 ============
+[![Build Status](https://travis-ci.org/nelsonic/learn-travis.png?branch=master)](https://travis-ci.org/nelsonic/learn-travis) [![Coverage Status](https://coveralls.io/repos/nelsonic/learn-travis/badge.png?branch=master)](https://coveralls.io/r/nelsonic/learn-travis?branch=master) [![Code Climate](https://codeclimate.com/github/nelsonic/learn-travis.png)](https://codeclimate.com/github/nelsonic/learn-travis) [![Dependencies](https://david-dm.org/nelsonic/learn-travis.png?theme=shields.io)](https://david-dm.org/nelsonic/learn-travis)
 
 A quick Travis CI (Continuous Integration) Tutorial for Node.js developers
 
