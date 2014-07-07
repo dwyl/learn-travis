@@ -8,17 +8,17 @@ A quick Travis CI (Continuous Integration) Tutorial for Node.js developers
 
 **test early, test often** to spot "*integration issues*" *before its too late ...*
 
-> Continuous integration is a software development process in which all 
-> development work is integrated at a predefined time or event and the 
-> resulting work is automatically tested and built. The idea is that 
+> Continuous integration is a software development process in which all
+> development work is integrated at a predefined time or event and the
+> resulting ***work is automatically tested and built***. The idea is that
 > development errors are identified very early in the process.
 
-If you are *completely* new to **C**ontinuous **I**ntegration (CI) 
-I recommend reading the 
-[CI Wikipedia Article](http://en.wikipedia.org/wiki/Continuous_integration) 
+If you are *completely* new to Continuous Integration (CI)
+I recommend reading the
+[CI Wikipedia Article](http://en.wikipedia.org/wiki/Continuous_integration)
 and Martin Fowler's [Article on CI](http://www.martinfowler.com/articles/continuousIntegration.html)
 <br />
-**Note**: Both of these are quite *text-heavy* but contain all the info you need. Read them! If you have any questions, *ask*! 
+**Note**: Both of these are quite *text-heavy* but contain all the info you need. Read them! If you have any questions, *ask*!
 
 The key advantages of Travis:
 
@@ -26,8 +26,8 @@ The key advantages of Travis:
 - **Free** Both to *Use* and **Open Source** (MIT License) see: http://about.travis-ci.org/
 - Integrates nicely with GitHub (without any developer effort!)
 
-I've used [Jenkins/Hudson CI](http://jenkins-ci.org) in the past 
-@groupon, but found the learning curve a bit steep for 
+I've used [Jenkins/Hudson CI](http://jenkins-ci.org) in the past
+@groupon, but found the learning curve a bit steep for
 *new developers*. Travis by contrast has a much *shallower learning curve*!
 
 ### Getting Started
@@ -42,10 +42,10 @@ Following the [Travis Getting Started](http://about.travis-ci.org/docs/user/gett
 
 ![Authorize Travis at GitHub](https://raw.github.com/nelsonic/learn-travis/master/images/02-Authorise-Travis-access-github.png "Authorize Travis GitHub")
 
-**Note**: If you ever want to *stop* Travis accessing to your GitHub account, 
+**Note**: If you ever want to *stop* Travis accessing to your GitHub account,
 simply visit: https://github.com/settings/applications and click on *Revoke*.
 
-> Once you have allowed access you will be taken back to Travis 
+> Once you have allowed access you will be taken back to Travis
 where you will see the Welcome screen:
 
 ![Welcome to Travis](https://raw.github.com/nelsonic/learn-travis/master/images/03-Travis-Welcome.png "Travis Welcome")
@@ -95,9 +95,9 @@ module.exports = function(grunt) {
 };
 ```
 
-**grunt.js** is a super basic grunt.js configuration file that 
+**grunt.js** is a super basic grunt.js configuration file that
 tells Grunt & Travis:
-"I have one file called hello.js, 
+"I have one file called hello.js,
 if it passes a *lint* check my build is working"
 
 ```sh
@@ -119,7 +119,7 @@ vi package.json
 }
 ```
 
-The **package.json** file is a standard node.js package file with *one* extra 
+The **package.json** file is a standard node.js package file with *one* extra
 element on the end, the "**scripts**" property identifies a "**test**" command:
 
 ```sh
@@ -146,9 +146,9 @@ console.log('Server running at http://127.0.0.1:1337/');
 ### Watch it Fail
 
 Comit all the files you just created and push them to github.
-Travis will automatically scan your repository and pickup the 
+Travis will automatically scan your repository and pickup the
 **.travis.yml** file which informs travis this is a **node.js** project/app
-next travis will look for a **package.json** file and scan for a 
+next travis will look for a **package.json** file and scan for a
 **scripts** entry (*specifically* the **test** one)
 Travis will download all the modules listed in your *devDependencies*
 and attempt to run your test script **grunt travis --verbose**
@@ -203,7 +203,7 @@ console.log('Server running at http://127.0.0.1:1337/');
 - Build Podcast Ep.32 (Travis) Video: http://build-podcast.com/travisci/
 - [@sayanee_](https://twitter.com/sayanee_)'s Build Podcast GitHub: https://github.com/sayanee/build-podcast/tree/master/032-travisci
 
-#### Further Reading 
+#### Further Reading
 
 - Comparison of CI Software: http://en.wikipedia.org/wiki/Comparison_of_continuous_integration_software
 - Great Book on CI: http://www.amazon.com/Continuous-Integration-Improving-Software-Reducing/dp/0321336380/
@@ -217,4 +217,3 @@ by comparison, Node.js: http://www.cvedetails.com/vulnerability-list/vendor_id-1
 - **ALL** The Diagrams on Google Image Search for Continuous Integration are terrible!
 https://www.google.com/search?q=continuous+integration&source=lnms&tbm=isch I either need
 to make time to draw one or ask someone to do one.
-
