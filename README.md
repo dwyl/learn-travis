@@ -40,7 +40,7 @@ Following the [Travis Getting Started](http://about.travis-ci.org/docs/user/gett
 
 > You will be re-directed to GitHub where you need to click "**Authorize application**"
 
-![Authorize Travis at GitHub](https://cloud.githubusercontent.com/assets/4185328/5858401/c9fd2220-a24a-11e4-9c4c-f5dfcea18931.png "Authorize Travis GitHub")
+![Authorize Travis at GitHub](https://cloud.githubusercontent.com/assets/4185328/5859970/3b6fac6a-a256-11e4-9e9a-6b9a38099873.jpg "Authorize Travis GitHub")
 
 **Note**: If you ever want to *stop* Travis accessing to your GitHub account,
 simply visit: https://github.com/settings/applications and click on *Revoke*.
