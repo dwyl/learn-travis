@@ -16,7 +16,7 @@ A quick Travis CI (Continuous Integration) Tutorial for Node.js developers
 If you are *completely* new to Continuous Integration (CI)
 I recommend reading the
 [CI Wikipedia Article](http://en.wikipedia.org/wiki/Continuous_integration)
-and Martin Fowler's [Article on CI](http://www.martinfowler.com/articles/continuousIntegration.html)
+and Martin Fowler's [Article on CI](http://www.martinfowler.com/articles/continuousIntegration.html).
 <br />
 **Note**: Both of these are quite *text-heavy* but contain all the info you need. Read them! If you have any questions, *ask*!
 
@@ -38,19 +38,14 @@ Following the [Travis Getting Started](http://about.travis-ci.org/docs/user/gett
 
 ![Travis Login with GitHub](https://raw.github.com/nelsonic/learn-travis/master/images/01-Travis-login-with-github.png "Sign in with GitHub")
 
-> You will be re-directed to GitHub where you need to click "**Allow Access**"
+> You will be re-directed to GitHub where you need to click "**Authorize application**"
 
-![Authorize Travis at GitHub](https://raw.github.com/nelsonic/learn-travis/master/images/02-Authorise-Travis-access-github.png "Authorize Travis GitHub")
+![Authorize Travis at GitHub](https://cloud.githubusercontent.com/assets/4185328/5858401/c9fd2220-a24a-11e4-9c4c-f5dfcea18931.png "Authorize Travis GitHub")
 
 **Note**: If you ever want to *stop* Travis accessing to your GitHub account,
 simply visit: https://github.com/settings/applications and click on *Revoke*.
 
-> Once you have allowed access you will be taken back to Travis
-where you will see the Welcome screen:
-
-![Welcome to Travis](https://raw.github.com/nelsonic/learn-travis/master/images/03-Travis-Welcome.png "Travis Welcome")
-
-> Next you need to enable a specific Git Repository in your Tavis Profile:
+> Once you have allowed access you will be taken back to Travis where you will need to enable a specific Git Repository. You can also do this in your Travis Profile:
 https://travis-ci.org/profile
 
 ![Enable Repo in Travis](https://raw.github.com/nelsonic/learn-travis/master/images/04-Travis-profile-enable-repo.png "Travis Enable Repo")
@@ -145,7 +140,7 @@ console.log('Server running at http://127.0.0.1:1337/');
 
 ### Watch it Fail
 
-Comit all the files you just created and push them to github.
+Commit all the files you just created and push them to github.
 Travis will automatically scan your repository and pickup the
 **.travis.yml** file which informs travis this is a **node.js** project/app
 next travis will look for a **package.json** file and scan for a
