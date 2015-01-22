@@ -8,9 +8,9 @@
   "author": "https://twitter.com/nelsonic",
   "version": "0.0.1",
   "devDependencies": {
-    "grunt": "~0.3.17"
+    "jshint": "^2.6.0"
   },
   "scripts": {
-    "test": "grunt travis --verbose"
+    "test": "./node_modules/jshint/bin/jshint hello.js"
   }
 }
