@@ -97,7 +97,7 @@ element on the end, the "**scripts**" property identifies a "**test**" command:
 npm install jshint --save-dev
 ```
 
-you can run this command *locally* if you have grunt installed on your machine,
+you can run this command *locally* by typing `npm test` in your terminal
 *or* in our case, we ask Travis to run it on the travis-ci.org servers.
 
 ```sh
@@ -121,7 +121,7 @@ Travis will automatically scan your repository and pickup the
 next travis will look for a **package.json** file and scan for a
 **scripts** entry (*specifically* the **test** one)
 Travis will download all the modules listed in your *devDependencies*
-and attempt to run your test script **grunt travis --verbose**
+and attempt to run your test script **npm test**
 
 In our case we are only asking travis to **lint** the **hello.js** file.
 and since the file was missing a semi-colon on the 4th line above,
@@ -153,8 +153,7 @@ console.log('Server running at http://127.0.0.1:1337/');
 
 - - -
 
-> Todo: update this tutorial to not use grunt.js to de-couple the tutorials.
-> Todo: create a more realistic test that does something useful.
+> Todo: create a more realistic test that does something useful. [pull requests welcome!]
 
 - - -
 
