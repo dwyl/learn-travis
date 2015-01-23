@@ -60,40 +60,16 @@ vi .travis.yml
 
 ```yml
 node_js:
-  - 0.8
+  - 0.10
 ```
 
 **.travis.yml** is a basic Travis configuration file that tells travis-ci our application
 runs on node.js and we want them to test it using a specific version of node.
 (the file needs to be in the root of your git repository)
 
-```sh
-grunt init:gruntfile
-```
+#### Define The Test
 
-```sh
-vi grunt.js
-```
-
-```javascript
-module.exports = function(grunt) {
-
-  grunt.initConfig({
-    lint: {
-      files: ['hello.js']
-    }
-  });
-
-  grunt.registerTask('default', 'lint');
-  grunt.registerTask('travis', 'lint');
-
-};
-```
-
-**grunt.js** is a super basic grunt.js configuration file that
-tells Grunt & Travis:
-"I have one file called hello.js,
-if it passes a *lint* check my build is working"
+In your **package.json** file, define the *test* you want Travis-CI to run:
 
 ```sh
 vi package.json
@@ -106,10 +82,10 @@ vi package.json
   "author": "your name here :-)",
   "version": "0.0.1",
   "devDependencies": {
-    "grunt": "~0.3.17"
+    "jshint": "^2.6.0"
   },
   "scripts": {
-    "test": "grunt travis --verbose"
+    "test": "./node_modules/jshint/bin/jshint hello.js"
   }
 }
 ```
@@ -118,8 +94,7 @@ The **package.json** file is a standard node.js package file with *one* extra
 element on the end, the "**scripts**" property identifies a "**test**" command:
 
 ```sh
-sudo npm install -g grunt-cli
-grunt travis --verbose
+npm install jshint --save-dev
 ```
 
 you can run this command *locally* if you have grunt installed on your machine,
