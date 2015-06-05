@@ -59,6 +59,7 @@ vi .travis.yml
 ```
 
 ```yml
+language: node_js
 node_js:
   - 0.10
 ```
