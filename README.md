@@ -1,6 +1,8 @@
 Learn Travis [![Build Status](https://travis-ci.org/docdis/learn-travis.svg?branch=master)](https://travis-ci.org/docdis/learn-travis) [![Code Climate](https://codeclimate.com/github/nelsonic/learn-travis.png)](https://codeclimate.com/github/nelsonic/learn-travis) [![Dependencies](https://david-dm.org/docdis/learn-travis.png?theme=shields.io)](https://david-dm.org/docdis/learn-travis)
 ============
 
+[![Join the chat at https://gitter.im/docdis/learn-travis](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/docdis/learn-travis?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+
 A quick Travis CI (Continuous Integration) Tutorial for Node.js developers
 
 
