@@ -136,6 +136,7 @@ But first lets create a file for `jshint` to check:
 ```sh
 vi hello.js
 ```
+Paste (*or type*) out the following code:
 
 ```javascript
 var http = require('http');
@@ -148,7 +149,7 @@ console.log('Server running at http://127.0.0.1:1337/');
 
 ### Watch it Fail
 
-Commit all the files you just created and push them to github.
+Commit all the files you just created and push them to GitHub.
 Travis will automatically scan your repository and pickup the
 **.travis.yml** file which informs travis this is a **node.js** project/app
 next travis will look for a **package.json** file and scan for a
@@ -180,15 +181,21 @@ http.createServer(function (req, res) {
 console.log('Server running at http://127.0.0.1:1337/');
 ```
 
-[![Build Status](https://travis-ci.org/dwyl/learn-travis.png?branch=master)](https://travis-ci.org/dwyl/learn-travis)
+And just like that our "**build**" is ***passing***!
 
 ![Travis Build Passing](https://raw.github.com/dwyl/learn-travis/master/images/07-travis-build-passing.png "Travis Build Passing")
 
-- - -
+[![Build Status](https://raw.githubusercontent.com/dwyl/repo-badges/master/highresPNGs/build-passing.png)](https://travis-ci.org/dwyl/learn-travis)
 
-> Todo: create a more realistic test that does something useful. [**pull requests welcome**!]
 
-- - -
+## *Realistic* Example
+
+@dwyl we use Travis-CI for a *lot* more than code linting! We use Travis-CI to
+***automatically*** run our unit/integration tests.  
+If you are new to ***automated testing***, we have a
+***Complete Beginners Test Driven Development Tutorial***:
+https://github.com/dwyl/learn-tdd  
+Which will show you how to use Travis-CI to check your code is working as expected!
 
 
 ### Notes:
