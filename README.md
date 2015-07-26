@@ -197,7 +197,7 @@ If you are new to ***automated testing***, we have a
 https://github.com/dwyl/learn-tdd  
 Which will show you how to use Travis-CI to check your code is working as expected!
 
-## Using Environment Variables with Travis!
+## Using *Environment Variables* with Travis!
 
 Often your application will use **environment variables** to store
 keys, passwords or other sensitive data you don't want to hard-code in your
@@ -219,7 +219,21 @@ env:
 - NODE_ENV=TEST
 ```
 The interesting part is the `env:` key where you can then list
-your environment variables and their coresponding values.
+your environment variables and their corresponding values.
+
+### 2. Add environment Variables in the Web Interface
+
+The *other* way of telling Travis-CI your environment variable(s)
+is to add them in the web-base user-interface (Web UI) in your project's settings page:
+
+![add travis-ci environment variables Web UI](http://i.imgur.com/5ubG0fM.png)
+
+*Notice* how in if you add your environment variables in the the Travis Web UI
+they are hidden (*from the build log*) by default.
+This does *not* prevent you from accidentally `console.log` them and exposing a key/passord.
+So take care when console.logging ...!
+
+
 
 :bulb: **Top tip**: if you need to ***check your*** `.travis.yml` file
 is **error-free**, use http://lint.travis-ci.org/
