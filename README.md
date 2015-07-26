@@ -233,6 +233,38 @@ they are hidden (*from the build log*) by default.
 This does *not* prevent you from accidentally `console.log` them and exposing a key/passord.
 So take care when console.logging ...!
 
+### *Secure* (*Encrypted*) Environment Variables
+
+If you are storing sensitive information (*like API Keys or Database Passwords*)
+for use in your node app, the ***best way*** is to use the
+[***travis ruby gem***](http://docs.travis-ci.com/user/encryption-keys/)
+to ***encrypt*** your keys:
+
+You will need to have ruby installed on your computer,
+if you don't already have this, we recommend installing it with
+[**RVM**](http://stackoverflow.com/a/14182172/1148249):
+
+```sh
+\curl -L https://get.rvm.io | bash -s stable --ruby
+rvm install current && rvm use current
+```
+Once you have installed ruby you can **install** the **travis ruby gem**:
+
+```sh
+gem install travis
+```
+
+With the gem installed, you encrypt your variable by running the command
+in your terminal (*ensure you are in the working directory of your project*)
+
+```sh
+travis encrypt MY_SECRET=super_secret
+```
+Type `yes` to confirm you are your project, you should now see your encrypted variable:
+
+![learn-travis-encrypted-variable](http://i.imgur.com/7WP1Xe0.png)
+
+Paste this in your `.travis.yml` file and commit it to GitHub!
 
 
 :bulb: **Top tip**: if you need to ***check your*** `.travis.yml` file
@@ -243,6 +275,8 @@ is **error-free**, use http://lint.travis-ci.org/
 # Todo
 
 + [ ] Create *micro-tutorial* on **Environment Variables**!!
+
+
 
 ### Notes:
 
@@ -257,6 +291,7 @@ is **error-free**, use http://lint.travis-ci.org/
 - Travis Getting Started: http://about.travis-ci.org/docs/user/getting-started/
 - Build Podcast Ep.32 (Travis) Video: http://build-podcast.com/travisci/
 - [@sayanee_](https://twitter.com/sayanee_)'s Build Podcast GitHub: https://github.com/sayanee/build-podcast/tree/master/032-travisci
+- Travis-CI Environment Variables guide: http://docs.travis-ci.com/user/environment-variables/
 
 #### Further Reading
 

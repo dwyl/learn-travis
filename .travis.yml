@@ -1,3 +1,7 @@
 language: node_js
 node_js:
   - 0.12
+env:
+- MY_VAR=EverythignIsAwesome
+- NODE_ENV=TEST
+- secure: "TsYgfDTXM9DhteoxruftAIm9qbcVFTfBbPmi/Mv9lGkDKZ/b4pputXgbfy2On7dsu5s9Bio/P4Nri61sgVHZm6AJIsNWf2D6Ggiz94oddr0r+7dPp9yqTziPQAKNmMSzCtLff9Dl4BSOiasy/aQy5M+NrD6kXex0xjZyTIEndzk="
