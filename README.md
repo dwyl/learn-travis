@@ -1,17 +1,17 @@
-Learn Travis [![Build Status](https://travis-ci.org/docdis/learn-travis.svg?branch=master)](https://travis-ci.org/docdis/learn-travis) [![Code Climate](https://codeclimate.com/github/nelsonic/learn-travis.png)](https://codeclimate.com/github/nelsonic/learn-travis) [![Dependencies](https://david-dm.org/docdis/learn-travis.png?theme=shields.io)](https://david-dm.org/docdis/learn-travis)
-============
-
-A quick Travis CI (Continuous Integration) Tutorial for Node.js developers
+# Learn Travis [![Build Status](https://travis-ci.org/dwyl/learn-travis.svg?branch=master)](https://travis-ci.org/dwyl/learn-travis)  [![Dependencies](https://david-dm.org/dwyl/learn-travis.png?theme=shields.io)](https://david-dm.org/dwyl/learn-travis)
 
 
-![Toilet Roll Blocks Seat FAIL](https://raw.github.com/nelsonic/learn-travis/master/images/Roll-Blocks-Toilet-Seat.jpg "Toilet Roll Blocks Seat from Closing. Fail!"")
+Our ***quick guide*** to **Travis CI** (*Continuous Integration*) for ***complete beginners***
 
-**test early, test often** to spot "*integration issues*" *before its too late ...*
 
-> Continuous integration is a software development process in which all
-> development work is integrated at a predefined time or event and the
-> resulting ***work is automatically tested and built***. The idea is that
-> development errors are identified very early in the process.
+![Toilet Roll Blocks Seat FAIL](https://raw.github.com/dwyl/learn-travis/master/images/Roll-Blocks-Toilet-Seat.jpg "Toilet Roll Blocks Seat from Closing. Fail!"")
+
+**Test Early, Test Often** to spot "*integration issues*" *before its too late ...*
+
+> Continuous integration is a software development process  
+> in which **all development work** is **integrated** at a predefined time  
+> or event and the resulting ***work is automatically tested and built***.  
+> The idea is that **development errors** are **identified** very ***early*** in the process.
 
 If you are *completely* new to Continuous Integration (CI)
 I recommend reading the
@@ -36,7 +36,7 @@ Following the [Travis Getting Started](http://about.travis-ci.org/docs/user/gett
 
 > Visit: https://travis-ci.org/ and click "**Sign in with GitHub**" no "*registration*" required.
 
-![Travis Login with GitHub](https://raw.github.com/nelsonic/learn-travis/master/images/01-Travis-login-with-github.png "Sign in with GitHub")
+![Travis Login with GitHub](https://raw.github.com/dwyl/learn-travis/master/images/01-Travis-login-with-github.png "Sign in with GitHub")
 
 > You will be re-directed to GitHub where you need to click "**Authorize application**"
 
@@ -48,7 +48,7 @@ simply visit: https://github.com/settings/applications and click on *Revoke*.
 > Once you have allowed access you will be taken back to Travis where you will need to enable a specific Git Repository. You can also do this in your Travis Profile:
 https://travis-ci.org/profile
 
-![Enable Repo in Travis](https://raw.github.com/nelsonic/learn-travis/master/images/04-Travis-profile-enable-repo.png "Travis Enable Repo")
+![Enable Repo in Travis](https://raw.github.com/dwyl/learn-travis/master/images/04-Travis-profile-enable-repo.png "Travis Enable Repo")
 
 ### Create The Project Files
 
@@ -61,7 +61,7 @@ vi .travis.yml
 ```yml
 language: node_js
 node_js:
-  - 0.10
+  - 0.12
 ```
 
 **.travis.yml** is a basic Travis configuration file that tells travis-ci our application
@@ -128,9 +128,9 @@ In our case we are only asking travis to **lint** the **hello.js** file.
 and since the file was missing a semi-colon on the 4th line above,
 it will fail the lint and thus the build process fails!
 
-![Travis Build Failing](https://raw.github.com/nelsonic/learn-travis/master/images/06-travis-build-failing.png "Travis Build Failing")
+![Travis Build Failing](https://raw.github.com/dwyl/learn-travis/master/images/06-travis-build-failing.png "Travis Build Failing")
 
-![Travis Build Failing Error Message](https://raw.github.com/nelsonic/learn-travis/master/images/05-travis-ci-lint-build-fails.png "Travis Build Failing Error Message")
+![Travis Build Failing Error Message](https://raw.github.com/dwyl/learn-travis/master/images/05-travis-ci-lint-build-fails.png "Travis Build Failing Error Message")
 
 On **line 343** we are missing a semi-colon.
 
@@ -148,13 +148,13 @@ http.createServer(function (req, res) {
 console.log('Server running at http://127.0.0.1:1337/');
 ```
 
-[![Build Status](https://travis-ci.org/nelsonic/learn-travis.png?branch=master)](https://travis-ci.org/nelsonic/learn-travis)
+[![Build Status](https://travis-ci.org/dwyl/learn-travis.png?branch=master)](https://travis-ci.org/dwyl/learn-travis)
 
-![Travis Build Passing](https://raw.github.com/nelsonic/learn-travis/master/images/07-travis-build-passing.png "Travis Build Passing")
+![Travis Build Passing](https://raw.github.com/dwyl/learn-travis/master/images/07-travis-build-passing.png "Travis Build Passing")
 
 - - -
 
-> Todo: create a more realistic test that does something useful. [pull requests welcome!]
+> Todo: create a more realistic test that does something useful. [**pull requests welcome**!]
 
 - - -
 
