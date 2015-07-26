@@ -29,7 +29,7 @@ and Martin Fowler's
 **Note**: Both of these are quite *text-heavy* but contain all the info you need.  
 Read them! If you have any questions, *ask*!  [![Join the chat at https://gitter.im/dwyl/chat](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/dwyl/chat/)
 
-### *Key Advantages* of Travis:
+### *Key Advantages* of Travis-CI:
 
 - **Nothing to** ***Install*** (*Travis Web-Based* ... ***Not*** *a* ***heavy Java*** *Application you have to host yourself*<sup>1</sup>)
 - **Free** Both to *Use* and **Open Source** (MIT License) see: http://about.travis-ci.org/
@@ -49,9 +49,10 @@ of frustration! #**NoBrainer**
 
 ### Pre-requisites?
 
-+ A computer with node.js installed
++ **Computer** *with* **node.js** ***installed***
++ any **text editor**
 
-If you don't have these, see:
+If you don't have these, see: https://github.com/dwyl/start-here
 
 ### Getting Started
 
@@ -65,10 +66,12 @@ Following the [Travis Getting Started](http://about.travis-ci.org/docs/user/gett
 
 ![Authorize Travis at GitHub](https://cloud.githubusercontent.com/assets/4185328/5859970/3b6fac6a-a256-11e4-9e9a-6b9a38099873.jpg "Authorize Travis GitHub")
 
-**Note**: If you ever want to *stop* Travis accessing to your GitHub account,
+**Note**: If you ever want to *stop* Travis accessing to your GitHub account,  
 simply visit: https://github.com/settings/applications and click on *Revoke*.
 
-> Once you have allowed access you will be taken back to Travis where you will need to enable a specific Git Repository. You can also do this in your Travis Profile:
+> Once you have allowed access you will be taken back to Travis  
+> where you will need to enable a specific Git Repository.  
+> You can also do this in your Travis Profile:
 https://travis-ci.org/profile
 
 ![Enable Repo in Travis](https://raw.github.com/dwyl/learn-travis/master/images/04-Travis-profile-enable-repo.png "Travis Enable Repo")
@@ -80,6 +83,7 @@ https://travis-ci.org/profile
 ```sh
 vi .travis.yml
 ```
+Paste the following code:
 
 ```yml
 language: node_js
@@ -87,13 +91,14 @@ node_js:
   - 0.12
 ```
 
-**.travis.yml** is a basic Travis configuration file that tells travis-ci our application
-runs on node.js and we want them to test it using a specific version of node.
-(the file needs to be in the root of your git repository)
+**.travis.yml** is a basic Travis configuration file
+that tells travis-ci our application runs on **node.js**  
+and we want them to test it using a *specific version* of node.  
+(*the file needs to be in the* ***root*** *of your GitHub repository*)
 
 #### Define The Test
 
-In your **package.json** file, define the *test* you want Travis-CI to run:
+Create a **package.json** file and define the *test* you want Travis-CI to run:
 
 ```sh
 vi package.json
@@ -101,8 +106,8 @@ vi package.json
 
 ```javascript
 {
-  "name": "learn-travis",
-  "description": "Simple nodejs, travis and grunt demo",
+  "name": "learn-travis-YOURNAME",
+  "description": "Simple Travis-CI check for JSHint (Code Linting)",
   "author": "your name here :-)",
   "version": "0.0.1",
   "devDependencies": {
@@ -115,14 +120,18 @@ vi package.json
 ```
 
 The **package.json** file is a standard node.js package file with *one* extra
-element on the end, the "**scripts**" property identifies a "**test**" command:
+element on the end, the "**scripts**" property identifies a "**test**" command.
+
+To run the test command we will need to install the `jshint` node module from NPM:
 
 ```sh
 npm install jshint --save-dev
 ```
 
-you can run this command *locally* by typing `npm test` in your terminal
+Now you can run the `test` command *locally* by typing `npm test` in your terminal  
 *or* in our case, we ask Travis to run it on the travis-ci.org servers.
+
+But first lets create a file for `jshint` to check:
 
 ```sh
 vi hello.js
