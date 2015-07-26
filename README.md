@@ -3,32 +3,55 @@
 
 Our ***quick guide*** to **Travis CI** (*Continuous Integration*) for ***complete beginners***
 
+## *Why*?
+
+Testing your work (*to be* ***sure*** *its working as expected*)
+is the most important part of a project.
 
 ![Toilet Roll Blocks Seat FAIL](https://raw.github.com/dwyl/learn-travis/master/images/Roll-Blocks-Toilet-Seat.jpg "Toilet Roll Blocks Seat from Closing. Fail!"")
 
-**Test Early, Test Often** to spot "*integration issues*" *before its too late ...*
+> ***CI*** helps you **Test Early, Test Often** to spot "*integration issues*" *before its too late ...*  
+> **Travis CI** takes the *hassle* out of running your own CI so you can focus on your project/product!
 
-> Continuous integration is a software development process  
+
+## *What*?
+
+> **C**ontinuous **I**ntegration is a software development process  
 > in which **all development work** is **integrated** at a predefined time  
 > or event and the resulting ***work is automatically tested and built***.  
 > The idea is that **development errors** are **identified** very ***early*** in the process.
 
-If you are *completely* new to Continuous Integration (CI)
-I recommend reading the
-[CI Wikipedia Article](http://en.wikipedia.org/wiki/Continuous_integration)
-and Martin Fowler's [Article on CI](http://www.martinfowler.com/articles/continuousIntegration.html).
+If you are ***completely new*** to Continuous Integration (CI) we ***recommend reading***  
+the [**CI Wikipedia Article**](http://en.wikipedia.org/wiki/Continuous_integration)
+and Martin Fowler's
+[Article on CI](http://www.martinfowler.com/articles/continuousIntegration.html).
 <br />
-**Note**: Both of these are quite *text-heavy* but contain all the info you need. Read them! If you have any questions, *ask*!
+**Note**: Both of these are quite *text-heavy* but contain all the info you need.  
+Read them! If you have any questions, *ask*!  [![Join the chat at https://gitter.im/dwyl/chat](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/dwyl/chat/)
 
-The key advantages of Travis:
+### *Key Advantages* of Travis:
 
-- Nothing to *Install* (Cloud Based ... *Not Java*!)
+- **Nothing to** ***Install*** (*Travis Web-Based* ... ***Not*** *a* ***heavy Java*** *Application you have to host yourself*<sup>1</sup>)
 - **Free** Both to *Use* and **Open Source** (MIT License) see: http://about.travis-ci.org/
-- Integrates nicely with GitHub (without any developer effort!)
+- **Integrates** nicely with **GitHub** (*without any developer effort*!)
 
-I've used [Jenkins/Hudson CI](http://jenkins-ci.org) in the past
-@groupon, but found the learning curve a bit steep for
-*new developers*. Travis by contrast has a much *shallower learning curve*!
+
+<sup>1</sup>We've used [Jenkins CI](http://jenkins-ci.org) in the past for *client* projects,  
+but **Jenkins** has a
+[***steep learning curve***](http://shop.oreilly.com/product/0636920010326.do)
+for *new developers*.  
+**Travis** *by contrast* has a much ***shallow learning curve***!
+
+## *How*?
+
+This tutorial will take you **20 minutes** and will ***save you hours***
+of frustration! #**NoBrainer**
+
+### Pre-requisites?
+
++ A computer with node.js installed
+
+If you don't have these, see:
 
 ### Getting Started
 
