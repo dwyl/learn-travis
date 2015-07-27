@@ -299,11 +299,11 @@ is **error-free**, use http://lint.travis-ci.org/
 - Great Book on CI: http://www.amazon.com/Continuous-Integration-Improving-Software-Reducing/dp/0321336380/
 - Jenkins/Hudson CI: http://jenkins-ci.org/
 - Lars Vogel Jenkins Tutorial: http://www.vogella.com/articles/Jenkins/article.html
-- This is why I avoid Java: http://www.cvedetails.com/vulnerability-list/vendor_id-5/product_id-1526/
+- This is why we ***avoid Java***: http://www.cvedetails.com/vulnerability-list/vendor_id-5/product_id-1526/
 by comparison, Node.js: http://www.cvedetails.com/vulnerability-list/vendor_id-12113/product_id-22804/opginf-1/Nodejs-Nodejs.html
 
 #### Future
 
 - **ALL** The Diagrams on Google Image Search for Continuous Integration are terrible!
-https://www.google.com/search?q=continuous+integration&source=lnms&tbm=isch I either need
-to make time to draw one or ask someone to do one.
+https://www.google.com/search?q=continuous+integration&source=lnms&tbm=isch
+*we* either need to make time to draw one or ask/commission someone to do one for us!
