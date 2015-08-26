@@ -1,4 +1,4 @@
-# Learn Travis [![Build Status](https://travis-ci.org/dwyl/learn-travis.svg?branch=master)](https://travis-ci.org/dwyl/learn-travis)  [![Dependencies](https://david-dm.org/dwyl/learn-travis.png?theme=shields.io)](https://david-dm.org/dwyl/learn-travis)
+# Learn Travis [![Build Status](https://travis-ci.org/dwyl/learn-travis.svg?branch=master)](https://travis-ci.org/dwyl/learn-travis)  [![Dependencies](https://david-dm.org/dwyl/learn-travis.png?theme=shields.io)](https://david-dm.org/dwyl/learn-travis) [![devDependency Status](https://david-dm.org/dwyl/learn-travis/dev-status.svg)](https://david-dm.org/dwyl/learn-travis#info=devDependencies)
 
 
 Our ***quick guide*** to **Travis CI** (*Continuous Integration*) for ***complete beginners***
@@ -199,6 +199,11 @@ Which will show you how to use Travis-CI to check your code is working as expect
 
 ## Using *Environment Variables* with Travis!
 
+> If you are ***new to environment variables***
+check out our ***introductory tutorial*** (*for complete beginners*):
+https://github.com/dwyl/learn-environment-variables/
+
+
 Often your application will use **environment variables** to store
 keys, passwords or other sensitive data you don't want to hard-code in your
 code; Travis-CI makes this ***easy***:
@@ -269,13 +274,6 @@ Paste this in your `.travis.yml` file and commit it to GitHub!
 
 :bulb: **Top tip**: if you need to ***check your*** `.travis.yml` file
 is **error-free**, use http://lint.travis-ci.org/
-
-<br />
-----
-# Todo
-
-+ [ ] Create *micro-tutorial* on **Environment Variables**!!
-
 
 
 ### Notes:
