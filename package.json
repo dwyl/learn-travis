@@ -6,9 +6,9 @@
   },
   "description": "Simple nodejs, travis and grunt demo",
   "author": "https://twitter.com/nelsonic",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "devDependencies": {
-    "jshint": "^2.6.0"
+    "jshint": "^2.8.0"
   },
   "scripts": {
     "test": "./node_modules/jshint/bin/jshint hello.js"
