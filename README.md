@@ -273,7 +273,7 @@ Paste this in your `.travis.yml` file and commit it to GitHub!
 
 
 :bulb: **Top tip**: if you need to ***check your*** `.travis.yml` file
-is **error-free**, run the command ```sh travis lint``` (in the folder where is your travis file)
+is **error-free**, run the command ``` travis lint``` (in the folder where is your travis file)
 
 ### Install Travis-CLI on Ubuntu
 
