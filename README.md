@@ -273,7 +273,7 @@ Paste this in your `.travis.yml` file and commit it to GitHub!
 
 
 :bulb: **Top tip**: if you need to ***check your*** `.travis.yml` file
-is **error-free**, run the command travis lint (in the folder where is your travis file)
+is **error-free**, run the command ```sh travis lint``` (in the folder where is your travis file)
 
 ### Install Travis-CLI on Ubuntu
 
@@ -281,7 +281,7 @@ is **error-free**, run the command travis lint (in the folder where is your trav
 > to simply check the syntax of your .travis.yml by doing a simple "travis lint" or any other advanced operations
 
 The install process on the official page https://github.com/travis-ci/travis.rb#installation lacks a bit of help and details.
-Even with installing the dev package of ruby you may encountered troubles.
+Even with installing the dev package of ruby you may encounter troubles.
 But the process seems to work flawlessly with RVM (Ruby version manager), like described above: https://rvm.io/rvm/install
 
 Just run the following commands:
