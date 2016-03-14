@@ -273,8 +273,32 @@ Paste this in your `.travis.yml` file and commit it to GitHub!
 
 
 :bulb: **Top tip**: if you need to ***check your*** `.travis.yml` file
-is **error-free**, use http://lint.travis-ci.org/
+is **error-free**, run the command ``` travis lint``` (in the folder where is your travis file)
 
+### Install Travis-CLI on Ubuntu
+
+> Can be useful if one needs for instance to encrypt keys in setup with external deployment tools like s3,
+> to simply check the syntax of your .travis.yml by doing a simple "travis lint" or any other advanced operations
+
+The install process on the official page https://github.com/travis-ci/travis.rb#installation lacks a bit of help and details.
+Even with installing the dev package of ruby you may encounter troubles.
+But the process seems to work flawlessly with RVM (Ruby version manager), like described above: https://rvm.io/rvm/install
+
+Just run the following commands:
+
+```sh
+gpg --keyserver hkp://keys.gnupg.net --recv-keys 409B6B1796C275462A1703113804BB82D39DC0E3
+\curl -sSL https://get.rvm.io | bash -s stable --ruby
+```
+
+now add this line at the end of your ~/.bashrc file:
+source "$HOME/.rvm/scripts/rvm"
+
+```sh
+source ~/.bashrc
+gem install travis
+travis --version
+```
 
 ### Notes:
 
