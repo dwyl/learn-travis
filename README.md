@@ -40,7 +40,7 @@ Read them! If you have any questions, *ask*!  [![Join the chat at https://gitter
 but **Jenkins** has a
 [***steep learning curve***](http://shop.oreilly.com/product/0636920010326.do)
 for *new developers*.  
-**Travis** *by contrast* has a much ***shallow learning curve***!
+**Travis** *by contrast* has a much ***shallower learning curve***!
 
 ## *How*?
 
