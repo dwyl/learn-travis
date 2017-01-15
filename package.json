@@ -1,14 +1,14 @@
 {
-  "name": "learn-travis",
+  "name": "learn-travis-gschri",
   "repository": {
     "type": "git",
     "url": "https://github.com/nelsonic/learn-travis.git"
   },
   "description": "Simple nodejs, travis and grunt demo",
-  "author": "https://twitter.com/nelsonic",
-  "version": "1.0.0",
+  "author": "gschri",
+  "version": "0.0.1",
   "devDependencies": {
-    "jshint": "^2.8.0"
+    "jshint": "^2.9.4"
   },
   "scripts": {
     "test": "./node_modules/jshint/bin/jshint hello.js"
