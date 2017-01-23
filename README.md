@@ -329,3 +329,5 @@ by comparison, Node.js: http://www.cvedetails.com/vulnerability-list/vendor_id-1
 - **ALL** The Diagrams on Google Image Search for Continuous Integration are terrible!
 https://www.google.com/search?q=continuous+integration&source=lnms&tbm=isch
 *we* either need to make time to draw one or ask/commission someone to do one for us!
+
+
