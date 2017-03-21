@@ -8,7 +8,7 @@ Our ***quick guide*** to **Travis CI** (*Continuous Integration*) for ***complet
 Testing your work (*to be* ***sure*** *its working as expected*)
 is the most important part of a project.
 
-![Toilet Roll Blocks Seat FAIL](https://raw.github.com/dwyl/learn-travis/master/images/Roll-Blocks-Toilet-Seat.jpg "Toilet Roll Blocks Seat from Closing. Fail!"")
+![Toilet Roll Blocks Seat FAIL](https://raw.github.com/dwyl/learn-travis/master/images/Roll-Blocks-Toilet-Seat.jpg "Toilet Roll Blocks Seat from Closing. Fail!")
 
 > ***CI*** helps you **Test Early, Test Often** to spot "*integration issues*" *before its too late ...*  
 > **Travis CI** takes the *hassle* out of running your own CI so you can focus on your project/product!
@@ -329,5 +329,3 @@ by comparison, Node.js: http://www.cvedetails.com/vulnerability-list/vendor_id-1
 - **ALL** The Diagrams on Google Image Search for Continuous Integration are terrible!
 https://www.google.com/search?q=continuous+integration&source=lnms&tbm=isch
 *we* either need to make time to draw one or ask/commission someone to do one for us!
-
-
