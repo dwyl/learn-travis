@@ -219,7 +219,7 @@ is to add them to your `.travis.yml` file:
 ```yml
 language: node_js
 node_js:
-  - 0.12
+ - "node"
 env:
 - MY_VAR=EverythignIsAwesome
 - NODE_ENV=TEST
