@@ -2,7 +2,7 @@
 
 <div align="center">
     <a href="https://travis-ci.org/">
-        <img src="./images/travis-mascot.png" style="width:20%;">
+        <img src="./images/travis-mascot.png" width="175">
     </a>
 </div>
 
