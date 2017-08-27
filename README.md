@@ -3,7 +3,13 @@
 
 Our ***quick guide*** to **Travis CI** (*Continuous Integration*) for ***complete beginners***
 
-## *Why*?
+##  *Index*
+
+1.  [Why](#why)
+2.  [What](#what)
+  1. [*Key Advantages* of Travis-CI](#key-adantages)
+
+## *Why*? <a name="why"></a>
 
 Testing your work (*to be* ***sure*** *its working as expected*)
 is the most important part of a project.
@@ -14,7 +20,7 @@ is the most important part of a project.
 > **Travis CI** takes the *hassle* out of running your own CI so you can focus on your project/product!
 
 
-## *What*?
+## *What*? <a name="what"></a>
 
 > **C**ontinuous **I**ntegration is a software development process  
 > in which **all development work** is **integrated** at a predefined time  
@@ -29,7 +35,8 @@ and Martin Fowler's
 **Note**: Both of these are quite *text-heavy* but contain all the info you need.  
 Read them! If you have any questions, *ask*!  [![Join the chat at https://gitter.im/dwyl/chat](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/dwyl/chat/)
 
-### *Key Advantages* of Travis-CI:
+<a name="key-adantages"></a>
+### *Key Advantages* of Travis-CI:  
 
 - **Nothing to** ***Install*** (*Travis Web-Based* ... ***Not*** *a* ***heavy Java*** *Application you have to host yourself*<sup>1</sup>)
 - **Free** Both to *Use* and **Open Source** (MIT License) see: http://about.travis-ci.org/
