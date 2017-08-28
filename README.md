@@ -1,9 +1,47 @@
-# Learn Travis [![Build Status](https://travis-ci.org/dwyl/learn-travis.svg?branch=master)](https://travis-ci.org/dwyl/learn-travis)  [![Dependencies](https://david-dm.org/dwyl/learn-travis.png?theme=shields.io)](https://david-dm.org/dwyl/learn-travis) [![devDependency Status](https://david-dm.org/dwyl/learn-travis/dev-status.svg)](https://david-dm.org/dwyl/learn-travis#info=devDependencies)
+# Learn Travis
 
+<div align="center">
+    <a href="https://travis-ci.org/">
+        <img src="./images/travis-mascot.png" width="175">
+    </a>
+</div>
+
+<div align="center">
+
+[![Build Status](https://travis-ci.org/dwyl/learn-travis.svg?branch=master)](https://travis-ci.org/dwyl/learn-travis)  [![Dependencies](https://david-dm.org/dwyl/learn-travis.png?theme=shields.io)](https://david-dm.org/dwyl/learn-travis) [![devDependency Status](https://david-dm.org/dwyl/learn-travis/dev-status.svg)](https://david-dm.org/dwyl/learn-travis#info=devDependencies)
+[![start with why](https://img.shields.io/badge/start%20with-why%3F-brightgreen.svg?style=flat)](http://www.ted.com/talks/simon_sinek_how_great_leaders_inspire_action)
+[![contributions welcome](https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=flat)](https://github.com/dwyl/learn-travis/issues)
+
+</div>
 
 Our ***quick guide*** to **Travis CI** (*Continuous Integration*) for ***complete beginners***
 
-## *Why*?
+##  Index
+
+1.  [Why](#why)
+2.  [What](#what)
+    1.  [Key Advantages of Travis-CI](#key-advantages)
+3.  [How](#how)
+    1.  [Pre-requisites](#pre-requisites)
+    2.  [Getting Started](#getting-started)
+    3.  [Create The Project Files](#create-the-project-files)
+    4.  [Define the test](#define-the-test)
+    5.  [Watch it Fail](#watch-it-fail)
+    6.  [Correct Code To Pass Build](#correct-code-to-pass-build)
+4.  [Realistic Example](#realistic-example)
+5.  [Using Environment Variables with Travis!](#environment-variables)
+    1. [Include Environment Variables in your `.travis.yml` file](#environment-variables-travis.yml)
+    2. [Add environment Variables in the Web Interface](#environment-variables-web-interface)
+    3. [Secure (Encrypted) Environment Variables](#environment-variables-secured)
+6.  [Install Travis-CLI on Ubuntu](#install-travis-cli-on-ubuntu)
+7.  [Going further](#going-further)
+    1.  [General CI Background Reading](#general-ci)
+    2.  [Travis Specific](#travis-specific)
+    3.  [Further Reading](#further-reading)
+8.  [TODO](#todo)  
+
+<a name="why"></a>
+## Why?
 
 Testing your work (*to be* ***sure*** *its working as expected*)
 is the most important part of a project.
@@ -13,8 +51,8 @@ is the most important part of a project.
 > ***CI*** helps you **Test Early, Test Often** to spot "*integration issues*" *before its too late ...*  
 > **Travis CI** takes the *hassle* out of running your own CI so you can focus on your project/product!
 
-
-## *What*?
+<a name="what"></a>
+## What?
 
 > **C**ontinuous **I**ntegration is a software development process  
 > in which **all development work** is **integrated** at a predefined time  
@@ -29,7 +67,8 @@ and Martin Fowler's
 **Note**: Both of these are quite *text-heavy* but contain all the info you need.  
 Read them! If you have any questions, *ask*!  [![Join the chat at https://gitter.im/dwyl/chat](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/dwyl/chat/)
 
-### *Key Advantages* of Travis-CI:
+<a name="key-advantages"></a>
+### *Key Advantages* of Travis-CI:  
 
 - **Nothing to** ***Install*** (*Travis Web-Based* ... ***Not*** *a* ***heavy Java*** *Application you have to host yourself*<sup>1</sup>)
 - **Free** Both to *Use* and **Open Source** (MIT License) see: http://about.travis-ci.org/
@@ -42,18 +81,21 @@ but **Jenkins** has a
 for *new developers*.  
 **Travis** *by contrast* has a much ***shallower learning curve***!
 
-## *How*?
+<a name="how"></a>
+## How?
 
 This tutorial will take you **20 minutes** and will ***save you hours***
 of frustration! #**NoBrainer**
 
-### Pre-requisites?
+<a name="pre-requisites"></a>
+### Pre-requisites
 
 + **Computer** *with* **node.js** ***installed***
 + any **text editor**
 
 If you don't have these, see: https://github.com/dwyl/start-here
 
+<a name="getting-started"></a>
 ### Getting Started
 
 Following the [Travis Getting Started](http://about.travis-ci.org/docs/user/getting-started/) guide:
@@ -76,6 +118,7 @@ https://travis-ci.org/profile
 
 ![Enable Repo in Travis](https://raw.github.com/dwyl/learn-travis/master/images/04-Travis-profile-enable-repo.png "Travis Enable Repo")
 
+<a name="create-the-project-files"></a>
 ### Create The Project Files
 
 > Now back in your text editor create a few *new files*:
@@ -96,7 +139,8 @@ that tells travis-ci our application runs on **node.js**
 and we want them to test it using a *specific version* of node.  
 (*the file needs to be in the* ***root*** *of your GitHub repository*)
 
-#### Define The Test
+<a name="define-the-test"></a>
+### Define The Test
 
 Create a **package.json** file and define the *test* you want Travis-CI to run:
 
@@ -147,6 +191,7 @@ http.createServer(function (req, res) {
 console.log('Server running at http://127.0.0.1:1337/');
 ```
 
+<a name="watch-it-fail"></a>
 ### Watch it Fail
 
 Commit all the files you just created and push them to GitHub.
@@ -167,7 +212,7 @@ it will fail the lint and thus the build process fails!
 
 On **line 343** we are missing a semi-colon.
 
-
+<a name="correct-code-to-pass-build"></a>
 ### Correct Code To Pass Build
 
 Simply add the simi-colon to the 4th line of **hello.js** and commit your changes:
@@ -188,6 +233,7 @@ And just like that our "**build**" is ***passing***!
 [![Build Status](https://raw.githubusercontent.com/dwyl/repo-badges/master/highresPNGs/build-passing.png)](https://travis-ci.org/dwyl/learn-travis)
 
 
+<a name="realistic-example"></a>
 ## *Realistic* Example
 
 @dwyl we use Travis-CI for a *lot* more than code linting! We use Travis-CI to
@@ -197,6 +243,7 @@ If you are new to ***automated testing***, we have a
 https://github.com/dwyl/learn-tdd  
 Which will show you how to use Travis-CI to check your code is working as expected!
 
+<a name="environment-variables"></a>
 ## Using *Environment Variables* with Travis!
 
 > If you are ***new to environment variables***
@@ -208,8 +255,9 @@ Often your application will use **environment variables** to store
 keys, passwords or other sensitive data you don't want to hard-code in your
 code; Travis-CI makes this ***easy***:
 
-There are **two ways** of telling Travis-CI about your environment variables:
+There are **three ways** of telling Travis-CI about your environment variables:
 
+<a name="environment-variables-travis.yml"></a>
 ### 1. Include Environment Variables in your `.travis.yml` file
 
 The easiest and most *explicit* way of listing your environment variables
@@ -226,6 +274,7 @@ env:
 The interesting part is the `env:` key where you can then list
 your environment variables and their corresponding values.
 
+<a name="environment-variables-web-interface"></a>
 ### 2. Add environment Variables in the Web Interface
 
 The *other* way of telling Travis-CI your environment variable(s)
@@ -238,7 +287,8 @@ they are hidden (*from the build log*) by default.
 This does *not* prevent you from accidentally `console.log` them and exposing a key/passord.
 So take care when console.logging ...!
 
-### *Secure* (*Encrypted*) Environment Variables
+<a name="environment-variables-secured"></a>
+### 3. *Secure* (*Encrypted*) Environment Variables
 
 If you are storing sensitive information (*like API Keys or Database Passwords*)
 for use in your node app, the ***best way*** is to use the
@@ -275,7 +325,8 @@ Paste this in your `.travis.yml` file and commit it to GitHub!
 :bulb: **Top tip**: if you need to ***check your*** `.travis.yml` file
 is **error-free**, run the command ``` travis lint``` (in the folder where is your travis file)
 
-### Install Travis-CLI on Ubuntu
+<a name="install-travis-cli-on-ubuntu"></a>
+## Install Travis-CLI on Ubuntu
 
 > Can be useful if one needs for instance to encrypt keys in setup with external deployment tools like s3,
 > to simply check the syntax of your .travis.yml by doing a simple "travis lint" or any other advanced operations
@@ -299,23 +350,26 @@ source ~/.bashrc
 gem install travis
 travis --version
 ```
+<a name="going-further"></a>
+## Going further
 
-### Notes:
-
-#### General CI Background Reading
+<a name="general-ci"></a>
+### General CI Background Reading
 
 - Continuous Integration Wikipedia Article: http://en.wikipedia.org/wiki/Continuous_integration
 - Martin Fowler's Article on CI: http://www.martinfowler.com/articles/continuousIntegration.html
 - CI Beginners Guide Video: https://vimeo.com/19596466
 
-#### Travis Specific
+<a name="travis-specific"></a>
+### Travis Specific
 
 - Travis Getting Started: http://about.travis-ci.org/docs/user/getting-started/
 - Build Podcast Ep.32 (Travis) Video: http://build-podcast.com/travisci/
 - [@sayanee_](https://twitter.com/sayanee_)'s Build Podcast GitHub: https://github.com/sayanee/build-podcast/tree/master/032-travisci
 - Travis-CI Environment Variables guide: http://docs.travis-ci.com/user/environment-variables/
 
-#### Further Reading
+<a name="further-reading"></a>
+### Further Reading
 
 - Comparison of CI Software: http://en.wikipedia.org/wiki/Comparison_of_continuous_integration_software
 - Great Book on CI: http://www.amazon.com/Continuous-Integration-Improving-Software-Reducing/dp/0321336380/
@@ -324,7 +378,8 @@ travis --version
 - This is why we ***avoid Java***: http://www.cvedetails.com/vulnerability-list/vendor_id-5/product_id-1526/
 by comparison, Node.js: http://www.cvedetails.com/vulnerability-list/vendor_id-12113/product_id-22804/opginf-1/Nodejs-Nodejs.html
 
-#### Future
+<a name="todo"></a>
+## TODO
 
 - **ALL** The Diagrams on Google Image Search for Continuous Integration are terrible!
 https://www.google.com/search?q=continuous+integration&source=lnms&tbm=isch
