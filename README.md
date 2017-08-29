@@ -152,9 +152,10 @@ that tells travis-ci what to expect and how to behave for our application.
 
 In this case, this file tells Travis we run on *Node.js*. Not only that, it also
 tells Travis to use the latest version of Node.js. You can also specify specific
-versions if you want to:
+versions if you want to and to customize your build process:
 
  - https://docs.travis-ci.com/user/languages/javascript-with-nodejs/
+ - https://docs.travis-ci.com/user/customizing-the-build/
 
 Because this specific file is so vital, it is mandatory that you place it in the
 root of your project folder and that you also validate it, either via the
@@ -264,13 +265,15 @@ And just like that our "**build**" is ***passing***!
 
 
 <a name="realistic-example"></a>
-## *Realistic* Example
+## Realistic Example
 
 @dwyl we use Travis-CI for a *lot* more than code linting! We use Travis-CI to
 ***automatically*** run our unit/integration tests.  
 If you are new to ***automated testing***, we have a
 ***Complete Beginners Test Driven Development Tutorial***:
-https://github.com/dwyl/learn-tdd  
+
+ - https://github.com/dwyl/learn-tdd  
+
 Which will show you how to use Travis-CI to check your code is working as expected!
 
 <a name="environment-variables"></a>
@@ -280,17 +283,16 @@ Which will show you how to use Travis-CI to check your code is working as expect
 check out our ***introductory tutorial*** (*for complete beginners*):
 https://github.com/dwyl/learn-environment-variables/
 
-
 Often your application will use **environment variables** to store
 keys, passwords or other sensitive data you don't want to hard-code in your
-code; Travis-CI makes this ***easy***:
+code; Travis-CI makes this **easy**:
 
 There are **three ways** of telling Travis-CI about your environment variables:
 
 <a name="environment-variables-travis.yml"></a>
 ### 1. Include Environment Variables in your `.travis.yml` file
 
-The easiest and most *explicit* way of listing your environment variables
+The easiest and most explicit way of listing your environment variables
 is to add them to your `.travis.yml` file:
 
 ```yml
@@ -307,33 +309,34 @@ your environment variables and their corresponding values.
 <a name="environment-variables-web-interface"></a>
 ### 2. Add environment Variables in the Web Interface
 
-The *other* way of telling Travis-CI your environment variable(s)
+Another way of telling Travis-CI your environment variable(s)
 is to add them in the web-base user-interface (Web UI) in your project's settings page:
 
 ![add travis-ci environment variables Web UI](http://i.imgur.com/5ubG0fM.png)
 
 *Notice* how in if you add your environment variables in the the Travis Web UI
 they are hidden (*from the build log*) by default.
-This does *not* prevent you from accidentally `console.log` them and exposing a key/passord.
+This does *not* prevent you from accidentally `console.log` them and exposing a key/password.
+
 So take care when console.logging ...!
 
 <a name="environment-variables-secured"></a>
-### 3. *Secure* (*Encrypted*) Environment Variables
+### 3. **Secure** (Encrypted) Environment Variables
 
 If you are storing sensitive information (*like API Keys or Database Passwords*)
 for use in your node app, the ***best way*** is to use the
-[***travis ruby gem***](http://docs.travis-ci.com/user/encryption-keys/)
-to ***encrypt*** your keys:
+[travis ruby gem](http://docs.travis-ci.com/user/encryption-keys/)
+to **encrypt** your keys:
 
 You will need to have ruby installed on your computer,
 if you don't already have this, we recommend installing it with
-[**RVM**](http://stackoverflow.com/a/14182172/1148249):
+[RVM](http://stackoverflow.com/a/14182172/1148249):
 
 ```sh
 \curl -L https://get.rvm.io | bash -s stable --ruby
 rvm install current && rvm use current
 ```
-Once you have installed ruby you can **install** the **travis ruby gem**:
+Once you have installed ruby you can install the **travis ruby gem**:
 
 ```sh
 gem install travis
@@ -345,15 +348,12 @@ in your terminal (*ensure you are in the working directory of your project*)
 ```sh
 travis encrypt MY_SECRET=super_secret
 ```
+
 Type `yes` to confirm you are your project, you should now see your encrypted variable:
 
 ![learn-travis-encrypted-variable](http://i.imgur.com/7WP1Xe0.png)
 
-Paste this in your `.travis.yml` file and commit it to GitHub!
-
-
-:bulb: **Top tip**: if you need to ***check your*** `.travis.yml` file
-is **error-free**, run the command ``` travis lint``` (in the folder where is your travis file)
+Paste this in your `.travis.yml` file, commit and push it to GitHub!
 
 <a name="install-travis-cli-on-ubuntu"></a>
 ## Install Travis-CLI on Ubuntu
