@@ -8,7 +8,7 @@
 
 <div align="center">
 
-[![Build Status](https://travis-ci.org/dwyl/learn-travis.svg?branch=master)](https://travis-ci.org/dwyl/learn-travis)  [![Dependencies](https://david-dm.org/dwyl/learn-travis.png?theme=shields.io)](https://david-dm.org/dwyl/learn-travis) [![devDependency Status](https://david-dm.org/dwyl/learn-travis/dev-status.svg)](https://david-dm.org/dwyl/learn-travis#info=devDependencies)
+[![Build Status](https://travis-ci.org/dwyl/learn-travis.svg?branch=master)](https://travis-ci.org/dwyl/learn-travis)  
 [![start with why](https://img.shields.io/badge/start%20with-why%3F-brightgreen.svg?style=flat)](http://www.ted.com/talks/simon_sinek_how_great_leaders_inspire_action)
 [![contributions welcome](https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=flat)](https://github.com/dwyl/learn-travis/issues)
 
@@ -37,7 +37,7 @@ Our ***quick guide*** to **Travis CI** (*Continuous Integration*) for ***complet
 7.  [Going further](#going-further)
     1.  [General CI Background Reading](#general-ci)
     2.  [Travis Specific](#travis-specific)
-    3.  [Further Reading](#further-reading)
+    3.  [Competitors](#competitors)
 8.  [TODO](#todo)  
 
 <a name="why"></a>
@@ -92,11 +92,11 @@ of frustration! #**NoBrainer**
 
 + **Computer** *with* **node.js** ***installed***
 + any **text editor**
-* machine with a debian system (Like Ubuntu)
++ machine with a debian system (Like Ubuntu)
 
-If you don't have these, see: https://github.com/dwyl/start-here
+If you don't have these, see: https://github.com/dwyl/start-here.
 If you don't have a Linux system, this tutorial will still apply, with exception
-to some of the tools used and some specific sections.
+to some of the tools used and chapter 6.
 
 <a name="getting-started"></a>
 ### Getting Started
@@ -161,7 +161,7 @@ Because this specific file is so vital, it is mandatory that you place it in the
 root of your project folder and that you also validate it, either via the
 [Travis-CLI ](#install-travis-cli-on-ubuntu) or via their [WebLint](http://lint.travis-ci.org/).
 
-Second, last create our `hello.js` file by pasting the following code:
+Second, lets create our `hello.js` file by pasting the following code:
 
 ```javascript
 var http = require('http');
@@ -198,7 +198,7 @@ Create a `package.json` file and paste the following:
 }
 ```
 
-This file tells Travis to run `jshint` on our `hello.js` file (which we will create next).
+This file tells Travis to run `jshint` on our `hello.js` file.
 `jshint` is a program that analysis code quality, so it is perfect to use a test!
 
 To run the test command we will need to install the `jshint` node module from NPM:
@@ -209,7 +209,7 @@ npm install jshint --save-dev
 
 Now you can run the `test` command *locally* by typing `npm test` in your terminal.
 
-If you do it, you can see the test fails. But are not introducing you to Travis so  
+If you do it, you can see the test fails. But we are not introducing you to Travis so  
 you can run tests manually, that's Travis's job! Let's see how Travis can run tests
 automatically!
 
@@ -383,12 +383,17 @@ travis --version
 <a name="going-further"></a>
 ## Going further
 
+This tutorial is meant to be only but a first contact with Travis and the world of CI.
+If you liked what have you seen so far, you can delve deeper into the following topics
+which will improve your understanding about CI overall, Travis and other tools that support Node.js.
+
 <a name="general-ci"></a>
 ### General CI Background Reading
 
 - Continuous Integration Wikipedia Article: http://en.wikipedia.org/wiki/Continuous_integration
 - Martin Fowler's Article on CI: http://www.martinfowler.com/articles/continuousIntegration.html
 - CI Beginners Guide Video: https://vimeo.com/19596466
+- Great Book on CI: http://www.amazon.com/Continuous-Integration-Improving-Software-Reducing/dp/0321336380/
 
 <a name="travis-specific"></a>
 ### Travis Specific
@@ -398,15 +403,14 @@ travis --version
 - [@sayanee_](https://twitter.com/sayanee_)'s Build Podcast GitHub: https://github.com/sayanee/build-podcast/tree/master/032-travisci
 - Travis-CI Environment Variables guide: http://docs.travis-ci.com/user/environment-variables/
 
-<a name="further-reading"></a>
-### Further Reading
+<a name="competitors"></a>
+### Competitors
 
 - Comparison of CI Software: http://en.wikipedia.org/wiki/Comparison_of_continuous_integration_software
-- Great Book on CI: http://www.amazon.com/Continuous-Integration-Improving-Software-Reducing/dp/0321336380/
-- Jenkins/Hudson CI: http://jenkins-ci.org/
-- Lars Vogel Jenkins Tutorial: http://www.vogella.com/articles/Jenkins/article.html
-- This is why we ***avoid Java***: http://www.cvedetails.com/vulnerability-list/vendor_id-5/product_id-1526/
-by comparison, Node.js: http://www.cvedetails.com/vulnerability-list/vendor_id-12113/product_id-22804/opginf-1/Nodejs-Nodejs.html
+- Travis CI Alternatives https://www.quora.com/What-are-the-alternatives-to-Travis-CI-Are-there-any-alternative-hosted-CI-services-for-open-source-projects
+- circle-ci: https://circleci.com/, [learn-circleci](https://github.com/dwyl/learn-circleci)
+- codeship: https://codeship.com/, [learn-codeship](https://github.com/dwyl/learn-codeship)
+
 
 <a name="todo"></a>
 ## TODO
