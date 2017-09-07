@@ -131,7 +131,7 @@ Paste the following code:
 ```yml
 language: node_js
 node_js:
-  - 0.12
+  - 6
 ```
 
 **.travis.yml** is a basic Travis configuration file
@@ -266,7 +266,7 @@ is to add them to your `.travis.yml` file:
 ```yml
 language: node_js
 node_js:
-  - 0.12
+  - 6
 env:
 - MY_VAR=EverythignIsAwesome
 - NODE_ENV=TEST
