@@ -2,15 +2,17 @@
 
 <div align="center">
     <a href="https://travis-ci.org/">
-        <img src="./images/travis-mascot.png" width="175">
+        <img src="https://travis-ci.com/images/logos/Tessa-pride-4.svg" width="175">
     </a>
 </div>
+<br />
 
 <div align="center">
 
 [![Build Status](https://travis-ci.org/dwyl/learn-travis.svg?branch=master)](https://travis-ci.org/dwyl/learn-travis)  [![Dependencies](https://david-dm.org/dwyl/learn-travis.png?theme=shields.io)](https://david-dm.org/dwyl/learn-travis) [![devDependency Status](https://david-dm.org/dwyl/learn-travis/dev-status.svg)](https://david-dm.org/dwyl/learn-travis#info=devDependencies)
 [![start with why](https://img.shields.io/badge/start%20with-why%3F-brightgreen.svg?style=flat)](http://www.ted.com/talks/simon_sinek_how_great_leaders_inspire_action)
 [![contributions welcome](https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=flat)](https://github.com/dwyl/learn-travis/issues)
+[![HitCount](http://hits.dwyl.io/dwyl/learn-travis.svg)](http://hits.dwyl.io/dwyl/learn-travis)
 
 </div>
 
@@ -46,7 +48,7 @@ Our ***quick guide*** to **Travis CI** (*Continuous Integration*) for ***complet
 Testing your work (*to be* ***sure*** *its working as expected*)
 is the most important part of a project.
 
-![Toilet Roll Blocks Seat FAIL](https://raw.github.com/dwyl/learn-travis/master/images/Roll-Blocks-Toilet-Seat.jpg "Toilet Roll Blocks Seat from Closing. Fail!")
+![Toilet Roll Blocks Seat FAIL](https://user-images.githubusercontent.com/194400/28815447-5458823c-7699-11e7-8c65-bcf9e4569388.png "Toilet Roll Blocks Seat from Closing. Fail!")
 
 > ***CI*** helps you **Test Early, Test Often** to spot "*integration issues*" *before its too late ...*  
 > **Travis CI** takes the *hassle* out of running your own CI so you can focus on your project/product!
@@ -65,7 +67,8 @@ and Martin Fowler's
 [Article on CI](http://www.martinfowler.com/articles/continuousIntegration.html).
 <br />
 **Note**: Both of these are quite *text-heavy* but contain all the info you need.  
-Read them! If you have any questions, *ask*!  [![Join the chat at https://gitter.im/dwyl/chat](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/dwyl/chat/)
+Read them! If you have any questions,
+[*ask*!](https://github.com/dwyl/learn-travis/issues)
 
 <a name="key-advantages"></a>
 ### *Key Advantages* of Travis-CI:  
@@ -102,11 +105,11 @@ Following the [Travis Getting Started](http://about.travis-ci.org/docs/user/gett
 
 > Visit: https://travis-ci.org/ and click "**Sign in with GitHub**" no "*registration*" required.
 
-![Travis Login with GitHub](https://raw.github.com/dwyl/learn-travis/master/images/01-Travis-login-with-github.png "Sign in with GitHub")
+![Travis Login with GitHub](https://user-images.githubusercontent.com/194400/28815478-6b49c546-7699-11e7-9bc1-fe1ec36e4967.png "Sign in with GitHub")
 
 > You will be re-directed to GitHub where you need to click "**Authorize application**"
 
-![Authorize Travis at GitHub](https://cloud.githubusercontent.com/assets/4185328/5859970/3b6fac6a-a256-11e4-9e9a-6b9a38099873.jpg "Authorize Travis GitHub")
+![Authorize Travis at GitHub](https://user-images.githubusercontent.com/194400/28815493-7a9b1be4-7699-11e7-8f67-36b547bac915.png "Authorize Travis GitHub")
 
 **Note**: If you ever want to *stop* Travis accessing to your GitHub account,  
 simply visit: https://github.com/settings/applications and click on *Revoke*.
@@ -116,7 +119,7 @@ simply visit: https://github.com/settings/applications and click on *Revoke*.
 > You can also do this in your Travis Profile:
 https://travis-ci.org/profile
 
-![Enable Repo in Travis](https://raw.github.com/dwyl/learn-travis/master/images/04-Travis-profile-enable-repo.png "Travis Enable Repo")
+![Enable Repo in Travis](https://user-images.githubusercontent.com/194400/28815577-bd0922e6-7699-11e7-90ea-ba891933f2ce.png "Travis Enable Repo")
 
 <a name="create-the-project-files"></a>
 ### Create The Project Files
@@ -131,7 +134,7 @@ Paste the following code:
 ```yml
 language: node_js
 node_js:
-  - 0.12
+  - 6
 ```
 
 **.travis.yml** is a basic Travis configuration file
@@ -208,7 +211,7 @@ it will fail the lint and thus the build process fails!
 
 ![Travis Build Failing](https://raw.github.com/dwyl/learn-travis/master/images/06-travis-build-failing.png "Travis Build Failing")
 
-![Travis Build Failing Error Message](https://raw.github.com/dwyl/learn-travis/master/images/05-travis-ci-lint-build-fails.png "Travis Build Failing Error Message")
+![Travis Build Failing Error Message](https://user-images.githubusercontent.com/194400/28815609-d7ec720c-7699-11e7-9376-56d438b1d2d8.png "Travis Build Failing Error Message")
 
 On **line 343** we are missing a semi-colon.
 
@@ -228,9 +231,9 @@ console.log('Server running at http://127.0.0.1:1337/');
 
 And just like that our "**build**" is ***passing***!
 
-![Travis Build Passing](https://raw.github.com/dwyl/learn-travis/master/images/07-travis-build-passing.png "Travis Build Passing")
+![Travis Build Passing](https://user-images.githubusercontent.com/194400/28816018-33a38120-769b-11e7-9f2f-28b7e325e9ed.png "Travis Build Passing")
 
-[![Build Status](https://raw.githubusercontent.com/dwyl/repo-badges/master/highresPNGs/build-passing.png)](https://travis-ci.org/dwyl/learn-travis)
+[![Build Status](https://user-images.githubusercontent.com/194400/28816007-2d303ec8-769b-11e7-8d75-8d1fbd93592c.png "Build Status: Passing")
 
 
 <a name="realistic-example"></a>
@@ -266,7 +269,7 @@ is to add them to your `.travis.yml` file:
 ```yml
 language: node_js
 node_js:
-  - 0.12
+ - "node"
 env:
 - MY_VAR=EverythignIsAwesome
 - NODE_ENV=TEST
@@ -280,7 +283,7 @@ your environment variables and their corresponding values.
 The *other* way of telling Travis-CI your environment variable(s)
 is to add them in the web-base user-interface (Web UI) in your project's settings page:
 
-![add travis-ci environment variables Web UI](http://i.imgur.com/5ubG0fM.png)
+![add travis-ci environment variables Web UI](https://user-images.githubusercontent.com/194400/28816067-5a2c99ee-769b-11e7-92da-c9187e0c8aa2.png)
 
 *Notice* how in if you add your environment variables in the the Travis Web UI
 they are hidden (*from the build log*) by default.
@@ -317,7 +320,7 @@ travis encrypt MY_SECRET=super_secret
 ```
 Type `yes` to confirm you are your project, you should now see your encrypted variable:
 
-![learn-travis-encrypted-variable](http://i.imgur.com/7WP1Xe0.png)
+![learn-travis-encrypted-variable](https://user-images.githubusercontent.com/194400/28816106-7ed7e1c2-769b-11e7-9601-39de2ec31e62.png)
 
 Paste this in your `.travis.yml` file and commit it to GitHub!
 
