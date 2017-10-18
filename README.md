@@ -317,7 +317,7 @@ is to add them in the web-base user-interface (Web UI) in your project's setting
 
 ![add travis-ci environment variables Web UI](https://user-images.githubusercontent.com/194400/28816067-5a2c99ee-769b-11e7-92da-c9187e0c8aa2.png)
 
-*Notice* how in if you add your environment variables in the the Travis Web UI
+*Notice* how in if you add your environment variables in the Travis Web UI
 they are hidden (*from the build log*) by default.
 This does *not* prevent you from accidentally `console.log` them and exposing a key/password.
 
