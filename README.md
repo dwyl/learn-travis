@@ -264,7 +264,7 @@ And just like that our "**build**" is ***passing***!
 
 ![Travis Build Passing](https://user-images.githubusercontent.com/194400/28816018-33a38120-769b-11e7-9f2f-28b7e325e9ed.png "Travis Build Passing")
 
-[![Build Status](https://user-images.githubusercontent.com/194400/28816007-2d303ec8-769b-11e7-8d75-8d1fbd93592c.png "Build Status: Passing")
+![Build Status](https://user-images.githubusercontent.com/194400/28816007-2d303ec8-769b-11e7-8d75-8d1fbd93592c.png "Build Status: Passing")
 
 
 <a name="realistic-example"></a>
