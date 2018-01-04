@@ -35,6 +35,7 @@ Our ***quick guide*** to **Travis CI** (*Continuous Integration*) for ***complet
     1. [Include Environment Variables in your `.travis.yml` file](#environment-variables-travis.yml)
     2. [Add environment Variables in the Web Interface](#environment-variables-web-interface)
     3. [Secure (Encrypted) Environment Variables](#environment-variables-secured)
+5.  [Elm Lang](#elm-lang)
 6.  [Install Travis-CLI on Ubuntu](#install-travis-cli-on-ubuntu)
 7.  [Going further](#going-further)
     1.  [General CI Background Reading](#general-ci)
@@ -357,6 +358,22 @@ Type `yes` to confirm you are your project, you should now see your encrypted va
 ![learn-travis-encrypted-variable](https://user-images.githubusercontent.com/194400/28816106-7ed7e1c2-769b-11e7-9601-39de2ec31e62.png)
 
 Paste this in your `.travis.yml` file, commit and push it to GitHub!
+
+
+<a name="elm-lang"></a>
+## Elm-lang Project
+
+@dwyl we use (_and **highly recommend**_) Elm.
+
+> If you are new to Elm please see: https://github.com/dwyl/learn-elm
+
+If you need a sample `.travis.yml` file for use with Elm projects,
+please see: https://github.com/nelsonic/photo-groove/blob/master/.travis.yml
+
+For more detail see our issue investigating this:
+https://github.com/dwyl/learn-travis/issues/31
+(_we looked at several prominent Elm projects to distil the config/script_)
+
 
 <a name="install-travis-cli-on-ubuntu"></a>
 ## Install Travis-CLI on Ubuntu
