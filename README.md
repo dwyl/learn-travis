@@ -197,7 +197,7 @@ Create a `package.json` file and paste the following:
     "jshint": "^2.6.0"
   },
   "scripts": {
-    "test": "./node_modules/jshint/bin/jshint hello.js"
+    "test": "jshint hello.js"
   }
 }
 ```
