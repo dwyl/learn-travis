@@ -36,12 +36,13 @@ Our ***quick guide*** to **Travis CI** (*Continuous Integration*) for ***complet
     2. [Add environment Variables in the Web Interface](#environment-variables-web-interface)
     3. [Secure (Encrypted) Environment Variables](#environment-variables-secured)
 5.  [Elm Lang](#elm-lang)
-6.  [Install Travis-CLI on Ubuntu](#install-travis-cli-on-ubuntu)
-7.  [Going further](#going-further)
+6.  [Elixir](#elixir-lang)
+7.  [Install Travis-CLI on Ubuntu](#install-travis-cli-on-ubuntu)
+8.  [Going further](#going-further)
     1.  [General CI Background Reading](#general-ci)
     2.  [Travis Specific](#travis-specific)
     3.  [Competitors](#competitors)
-8.  [TODO](#todo)  
+9.  [TODO](#todo)  
 
 <a name="why"></a>
 ## Why?
@@ -367,14 +368,41 @@ Paste this in your `.travis.yml` file, commit and push it to GitHub!
 
 @dwyl we use (_and **highly recommend**_) Elm.
 
-> If you are new to Elm please see: https://github.com/dwyl/learn-elm
+> If you are new to Elm please see:
+[https://github.com/dwyl/**learn-elm**](https://github.com/dwyl/learn-elm)
 
-If you need a sample `.travis.yml` file for use with Elm projects,
+If you need a _sample_ `.travis.yml` file for use with Elm projects,
 please see: https://github.com/nelsonic/photo-groove/blob/master/.travis.yml
 
 For more detail see our issue investigating this:
 https://github.com/dwyl/learn-travis/issues/31
 (_we looked at several prominent Elm projects to distil the config/script_)
+
+
+<a name="elixir-lang"></a>
+## Elixir-lang Project
+
+@dwyl we use (_and **highly recommend**_) Elixir for Server-side Applications.
+
+> If you are new to Elixir please see:
+[https://github.com/dwyl/**learn-elixir**](https://github.com/dwyl/learn-elixir)
+
+To get started, an Elixir project only needs the following lines
+in `.travis.yml` file:
+
+```yml
+language: elixir
+elixir:
+  - 1.6
+env:
+  - MIX_ENV=test
+script:
+  - mix test
+```
+
+If you need a "_real world example_" `.travis.yml` file
+for use with Elixir projects, please see:
+https://github.com/dwyl/hits-elixir/blob/master/.travis.yml
 
 
 <a name="install-travis-cli-on-ubuntu"></a>
