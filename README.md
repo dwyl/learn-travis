@@ -62,6 +62,8 @@ is the most important part of a project.
 > or event and the resulting ***work is automatically tested and built***.  
 > The idea is that **development errors** are **identified** very ***early*** in the process.
 
+![Continuous Integration Diagram](https://cloud.githubusercontent.com/assets/1128312/20186823/ddfdbb9e-a771-11e6-9e99-4720e7b60f53.png)
+
 If you are ***completely new*** to Continuous Integration (CI) we ***recommend reading***  
 the [**CI Wikipedia Article**](http://en.wikipedia.org/wiki/Continuous_integration)
 and Martin Fowler's
