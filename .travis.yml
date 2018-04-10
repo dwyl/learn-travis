@@ -1,6 +1,7 @@
 language: node_js
 node_js:
  - "node"
+sudo: enabled
 env:
 - MY_VAR=EverythignIsAwesome
 - NODE_ENV=TEST
