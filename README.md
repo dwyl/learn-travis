@@ -36,6 +36,7 @@ for ***complete beginners***
     2. [Add environment Variables in the Web Interface](#environment-variables-web-interface)
     3. [Secure (Encrypted) Environment Variables](#environment-variables-secured)
 6.  [**Continuous _Delivery_**](#continuous-delivery)
+    1. [Add Encrypted SSH Keys]()
 7.  [Elm Lang](#elm-lang)
 8.  [Elixir](#elixir-lang)
 9.  [Install Travis-CLI on Ubuntu](#install-travis-cli-on-ubuntu)
@@ -288,7 +289,8 @@ If you are new to ***automated testing***, we have a
 
  - https://github.com/dwyl/learn-tdd  
 
-Which will show you how to use Travis-CI to check your code is working as expected!
+Which will show you how to use Travis-CI
+to check your code is working as expected!
 
 <a name="environment-variables"></a>
 ## Using *Environment Variables* with Travis!
@@ -324,13 +326,15 @@ your environment variables and their corresponding values.
 ### 2. Add environment Variables in the Web Interface
 
 Another way of telling Travis-CI your environment variable(s)
-is to add them in the web-base user-interface (Web UI) in your project's settings page:
+is to add them in the web-base user-interface (Web UI)
+in your project's settings page:
 
 ![add travis-ci environment variables Web UI](https://user-images.githubusercontent.com/194400/28816067-5a2c99ee-769b-11e7-92da-c9187e0c8aa2.png)
 
 *Notice* how in if you add your environment variables in the Travis Web UI
 they are hidden (*from the build log*) by default.
-This does *not* prevent you from accidentally `console.log` them and exposing a key/password.
+This does *not* prevent you from accidentally `console.log`
+them and exposing a key/password.
 
 So take care when console.logging ...!
 
@@ -397,7 +401,13 @@ _Once your App has "traction" and you have "outgrown Heroku"
 return to this topic and our "**DevOps**" tutorial:_
 https://github.com/dwyl/learn-devops
 
+### Add an Encrypted SSH Key to Travis-CI for Deployment
 
+We decided to give this walkthrough it's own file/page
+(_to avoid "cluttering" the main "beginners" tutorial_):
+
+
+<br /><br />
 
 <a name="elm-lang"></a>
 ## Elm-lang Project
