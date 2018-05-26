@@ -104,7 +104,9 @@ and use a _strong_ `passphrase`.
 e.g: https://xkpasswd.net
 (_or use your_
   [***imagination***](https://www.google.com/search?q=imaginationland&tbm=vid)
-  ...)
+e.g: [`brown french cat wears big boots`](https://en.wikipedia.org/wiki/Puss_in_Boots)
+ _it doesn't matter because you don't need to remember/use it
+ beyond this initial setup; this key will **only** be used by Travis-CI_...!)
 
 ![generate-ssh-key](https://user-images.githubusercontent.com/194400/40562649-cf74ee24-6059-11e8-92c4-69144ccdea55.png)
 
@@ -116,20 +118,75 @@ see:_ https://stackoverflow.com/questions/112396/how-do-i-remove-the-passphrase-
 _But, for the sake of "**perceived security**" we are using
 a password for the SSH key to add an "**extra step**" for any "bad actors"
 trying to "hack" your server._
-> _I am including a "sample"_ `passphrase`
-[`brown french cat wears big boots`](https://en.wikipedia.org/wiki/Puss_in_Boots)
-_in this guide
+> _I am including a "sample"_ `passphrase` _in this guide
 for **illustration purposes ONLY**, it is not a "real" one used anywhere
 and you should **never share passwords/passphrases** with **anyone**_!
 
 
-### 3. Install Travis-CI CLI
+#### 2.1 Add the `new` SSH Key to the `authorized_keys` File
+
+In order for this key to be _used_ for SSH access,
+it needs to be included in the `authorized_keys` file on the _server_.
+
+Run the following command to _append_
+the `public` key to the list of "authorized keys":
+
+```
+cat id_rsa.pub >> authorized_keys
+```
+We will _test_ that this worked below in step **3.1**
+
+
+### 3. _Securely_ Download the SSH Key
+
+Ensure that your current working directory is the project/app
+that you are adding the SSH key for.
+(_so you don't have to **move** the key later_)
+
+`before` you download the SSH key,
+_first_ add a line to your `.gitignore` file
+to _ensure_ that you don't _accidentally_
+commit the `private` key in _plaintext_!
+```sh
+echo "deploy_key" >> .gitignore
+```
+
+With that done, download the key with the following command:
+
+```sh
+scp user@ip.add.ress.here:/root/.ssh/id_rsa  ./deploy_key
+```
+
+e.g:
+```sh
+scp root@138.68.163.126:/root/.ssh/id_rsa ./deploy_key
+```
+
+![download-ssh-key](https://user-images.githubusercontent.com/194400/40564862-4ac51e98-6062-11e8-8ac0-a6c0fab92902.png)
+
+#### 3.1 _Test_ That you are Able to Login to the Server ...
+
+Test that you are _able_ to login to the server using the `deploy_key`:
+
+```sh
+ssh -i /path/to/deploy_key user@ip.add.ress.here
+```
+e.g: <br />
+```sh
+ssh -i ./deploy_key root@138.68.163.126
+```
+
+![ssh-login-with-deploy_key](https://user-images.githubusercontent.com/194400/40565345-2b3b197c-6064-11e8-80ea-84a9439b48ba.png)
+
+
+### 4. Install Travis-CI CLI
 
 In order to encrypt both the SSH key and passphrase, we will need
 the [**Travis-CI CLI**](https://github.com/travis-ci/travis.rb)
 
 Install the Travis CLI on your `localhost`
-(_to avoid "polluting" the server_):
+(_to avoid "polluting" the server
+**and** so that you can use it in future projects_):
 ```sh
 gem install travis
 ```
@@ -181,50 +238,133 @@ But seriously,
 https://www.computerworld.com/article/3252823/linux/why-linux-is-better-than-windows-or-macos-for-security.html
 
 
-### 4. _Securely_ Download the SSH Key
 
-Ensure that your current working directory is the project/app
-that you are adding the SSH key for.
-(_so you don't have to **move** the key later_)
+### 5. _Encrypt_ the Private Key
 
-`before` you download the SSH key,
-_first_ add a line to your `.gitignore` file
-to _ensure_ that you don't _accidentally_
-commit the `private` key in _plaintext_!
-```sh
-echo "id_rsa" >> .gitignore
-```
-
-With that done, download the key with the following command:
+Use the `travis` CLI to encrypt the key on your `localhos`:
 
 ```
-scp user@ip.add.ress.here:/root/.ssh/id_rsa  ./local/dir
+touch .travis.yml && travis encrypt-file ./deploy_key --add
+```
+You should see something like this:
+
+![ssh-key-encrypted](https://user-images.githubusercontent.com/194400/40564928-8b1209f2-6062-11e8-83a1-2a0df73fe519.png)
+
+
+if you look at the `.travis.yml` file in your project folder,
+you will notice that a couple of lines were added:
+
+```
+before_install:
+- openssl aes-256-cbc -K $encrypted_77965d5bdd4d_key -iv $encrypted_77965d5bdd4d_iv
+  -in deploy_key.enc -out ./deploy_key -d
 ```
 
+Ensure that you commit the `deploy_key.enc` file and `.travis.yml` file
+in your project before pushing to GitHub.
+
+> Note: there is an _alternative_ way of doing this where the SSH key
+is to `base64` encode the encrypted key and included it in `.travis.yml`,
+see: https://gist.github.com/lukewpatterson/4242707
+but we feel that it adds a lot of "noise" to the `.travis.yml` file.
+Decide for yourself which you prefer; be consistent across your projects.
+
+
+### 6. _Encrypt_ the SSH Key Passphrase
+
+Since we used a `passphrase` for our SSH key in step 2 (_above_),
+we need to _securely_ encrypt that `passphrase` and add it as an
+Environment Variable in our `.travis.yml` file.
+
+Thankfully, we've done this before in a "previous lesson":
+https://github.com/dwyl/learn-environment-variables#secure-encrypted-environment-variables
+
+```
+travis encrypt SSH_ASKPASS="totes super secret" --add
+```
+
+`ssh-add` _expects_ the password for the RSA Key to be the `SSH_ASKPASS`
+environment variable ... see: https://www.ssh.com/ssh/add
+
+travis encrypt SSH_ASKPASS="brown french cat wears big boots" --add
+
+Your `.travis.yml` file should include a _new_ line something like this:
+```
+env:
+  matrix:
+  - MY_VAR=EverythingIsAwesome
+  global:
+    secure: Yr/YfU7fIqgNoD+xKp+6IKPLC6Vwa9636wcQT+E--etc.=
+
+```
+
+This is the Git commit where I did this for our "example" project:
+https://github.com/nelsonic/hello-world-node-http-server/commit/b7c00b889f1e5d8663613b4514e8e6e31ea99115
+
+#### 6.1 Set the RSA Key as the "preferred key" in `.travis.yml`
+
+We already added the _encrypted_ RSA key to our repository in step 5 (_above_)
+but we _also_ need to add the RSA key as the "preferred key" on Travis-CI.
+To do that, add the following line to your `.travis.yml` file:
+```yml
+- ssh-add ./deploy_key
+```
+_ensure_ that this line is just _after_ the key decryption line.
 e.g:
-```sh
-scp root@138.68.163.126:/root/.ssh/id_rsa ./
+```yml
+
+```
+example:
+
+<!--
+> To our knowledge,
+this is "secure":
+https://blog.travis-ci.com/2016-11-23-security-vulnerability-environment-variables/
+-->
+
+### 7. Test it on Travis-CI
+
+The ["proof of the pudding"](https://en.wiktionary.org/wiki/the_proof_of_the_pudding_is_in_the_eating)
+is _confirming_ that Travis-CI can execute an SSH command
+on your server instance ...
+
+Add the following lines to your `.travis.yml` file:
+
+
+#### Set StrictHostKeyChecking no for Server
+
+```
+before_script:
+  - echo -e "Host heroku.com\n\tStrictHostKeyChecking no\n" >> ~/.ssh/config
+```
+e.g:
+```
+before_script:
+  - echo -e "Host 138.68.163.126\n\tStrictHostKeyChecking no\n" >> ~/.ssh/config
 ```
 
-![download-ssh-key](https://user-images.githubusercontent.com/194400/40564470-b8c60df0-6060-11e8-83f5-3e89995051c2.png)
+Via: https://stackoverflow.com/questions/16638573/auto-authorize-ssh-auth-requests-on-travis-ci
 
 
-### 5. Encrypt the Private Key
+#### Install `sshpass`
 
-Use the `travis` CLI to encrypt the key:
+In order to pass the SSH Key password into any ssh commands,
+we need  to use this tiny program called `sshpass`.
+see:
 
+Ubuntu (the OS on Travis-CI):
+```sh
+apt-get install sshpass
+```
 
+Mac:
+```sh
+brew install https://raw.githubusercontent.com/kadwanev/bigboybrew/master/Library/Formula/sshpass.rb
+```
 
+see: https://gist.github.com/arunoda/7790979
 
-### 6.
-
-
-
-
-
-
-
-### ?. _Test_ That you are Able to Login to the Server ...
+### ??.
 
 _Securely_
 Note: we are only downloading this _temporarily_
@@ -237,39 +377,6 @@ _decrypted_ SSH key is:
 >> ssh ...
 
 
-#### Download the Private Key File
-
-On your `localhost`, download the `private` key you created in the previous step.
-
-```
-scp root@51.140.86.5:/root/.ssh/id_rsa ./deploy_key
-echo "deploy_key" >> .gitignore
-```
-
-![download-ssh-key](https://user-images.githubusercontent.com/194400/28846821-c8570300-7704-11e7-993c-478010457fbd.png)
-
-_Ensure_ you don't accidentally commit the _private_ key
-to GitHub by your `.gitignore` file.
-
-#### Encrypt the Private Key
-
-Again, on your localhost, encrypt the `private` key using Travis' CLI:
-
-```
-gem install travis
-touch .travis.yml && travis encrypt-file ~/.ssh/deploy_key --add
-```
-
-You should have a `deploy_key.enc` file in your working directory.
-This should be added/commited to GitHub so that Travis can use it.
-
-#### How the Private RSA Key is Used by Travis-CI to Deploy using Edeliver
-
-The key decrypted by Travis in the `before_install:` script.
-We check that the decrypted key is valid by testing the `ssh` access in `after_success:`
-If that works, we attempt to run the `mix edeliver build upgrade` task.
-
-
 
 ## Background / Related Reading
 
@@ -277,3 +384,6 @@ If that works, we attempt to run the `mix edeliver build upgrade` task.
 https://developer.github.com/v3/guides/managing-deploy-keys
 + Generating a new SSH key: https://help.github.com/articles/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent/
 + SSH deploys with Travis CI: https://oncletom.io/2016/travis-ssh-deploy/
++ https://www.rusiczki.net/2018/01/25/use-travis-to-build-and-deploy-your-jekyll-site-through-ssh/
++ http://anil.recoil.org/2013/10/06/travis-secure-ssh-integration.html
++ Auto-deploying built products to gh-pages with Travis: https://gist.github.com/domenic/ec8b0fc8ab45f39403dd
