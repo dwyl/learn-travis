@@ -100,27 +100,33 @@ cd ~/.ssh
 ssh-keygen -t rsa -b 4096 -C "TravisCIDeployKey"
 ```
 Press `[Enter]` key to use the defaults for the filename
-and use a _strong_ `passphrase`.
-e.g: https://xkpasswd.net
-(_or use your_
-  [***imagination***](https://www.google.com/search?q=imaginationland&tbm=vid)
-e.g: [`brown french cat wears big boots`](https://en.wikipedia.org/wiki/Puss_in_Boots)
- _it doesn't matter because you don't need to remember/use it
- beyond this initial setup; this key will **only** be used by Travis-CI_...!)
+and leave the `password` _blank_.<sup>1</sup> <br />
+You should see output in your terminal _similar_ to this:
 
-![generate-ssh-key](https://user-images.githubusercontent.com/194400/40562649-cf74ee24-6059-11e8-92c4-69144ccdea55.png)
+![generate-ssh-key](https://user-images.githubusercontent.com/194400/40580695-b5550956-613b-11e8-936c-9ba091b3c1ba.png)
 
 
-> _**Note**: given that we are "trusting" Travis-CI with the_ `private` _key
-there is not much **point** adding_ `passphrase` _to it, because
-the_ `passphrase` _can easily be "stripped" once the key is decrypted ...
-see:_ https://stackoverflow.com/questions/112396/how-do-i-remove-the-passphrase-for-the-ssh-key-without-having-to-create-a-new-ke
-_But, for the sake of "**perceived security**" we are using
-a password for the SSH key to add an "**extra step**" for any "bad actors"
-trying to "hack" your server._
-> _I am including a "sample"_ `passphrase` _in this guide
-for **illustration purposes ONLY**, it is not a "real" one used anywhere
-and you should **never share passwords/passphrases** with **anyone**_!
+<sup>1</sup><small>_Having an RSA key **without** a_ `password`
+_is "OK" for use as a deployment key on Travis-CI
+because the key will be **encrypted** using Travis'_ `public` _key
+meaning that **only** Travis can decrypt it._
+_given that we are "trusting" Travis-CI with the_ `private` _key
+there is not much **point** adding_ `password` _to it, because
+the_ `password` _can easily be_
+["_stripped_"](https://stackoverflow.com/questions/112396)
+_once the key is decrypted._
+_and, given that Travis **needs** to "know"_
+_the_ `password` _in order to **use** the key.
+If an "attacker" was to gain access to Travis' system and had their_
+`private` _key, the **Internet** would "break"!_
+_seriously, enough NPM packages are
+**automatically published** by Travis-CI that it would be_
+["`left-pad` _gate_"](https://www.theregister.co.uk/2016/03/23/npm_left_pad_chaos)
+_times a **million** if Travis were compromised!_
+_**However**, if you have **time** to help us with "upgrading" this tutorial
+to use an RSA key **with** a_ `password`
+_we would **love** to know how it's done
+see_: https://github.com/dwyl/learn-travis/issues/42#issuecomment-392257518
 
 
 #### 2.1 Add the `new` SSH Key to the `authorized_keys` File
