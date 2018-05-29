@@ -107,7 +107,7 @@ You should see output in your terminal _similar_ to this:
 
 
 <sup>1</sup><small>_Having an RSA key **without** a_ `password`
-_is "OK" for use as a deployment key on Travis-CI
+_is "OK" for use as a key **exclusively** used for deployment on Travis-CI
 because the key will be **encrypted** using Travis'_ `public` _key
 meaning that **only** Travis can decrypt it._
 _given that we are "trusting" Travis-CI with the_ `private` _key
@@ -228,8 +228,8 @@ Now try installing the Travis-CI CLI again.
 sudo apt-get install ruby-full
 ```
 
-For installation instructions for specific/different Linux distribution, see:
-https://www.ruby-lang.org/en/documentation/installation
+For installation instructions for specific/different Linux distribution, <br />
+see: https://www.ruby-lang.org/en/documentation/installation
 
 #### Windows...?
 
@@ -240,9 +240,10 @@ https://www.ruby-lang.org/en/documentation/installation
 </div>
 <br />
 
-But seriously,
+But seriously, install Linux on your Windows PC and set yourself _free_!
 https://www.computerworld.com/article/3252823/linux/why-linux-is-better-than-windows-or-macos-for-security.html
 
+If you are "_stuck_" using windows see: https://rubyinstaller.org
 
 
 ### 5. _Encrypt_ the Private Key
@@ -335,6 +336,11 @@ is _confirming_ that Travis-CI can execute an SSH command
 on your server instance ...
 
 Add the following lines to your `.travis.yml` file:
+
+
+
+
+
 
 
 #### Set StrictHostKeyChecking no for Server

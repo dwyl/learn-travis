@@ -377,9 +377,9 @@ Paste this in your `.travis.yml` file, commit and push it to GitHub!
 <a name="continuous-delivery"></a>
 ## Continuous _Delivery_ 🚀
 
-Continuous delivery (CD) is a software engineering approach
-in which teams produce software in short cycles,
-ensuring that the software can be reliably released at any time.
+**Continuous delivery** (**CD**) is a software engineering approach
+in which teams produce software in **short cycles**,
+ensuring that the software can be **reliably released** at **_any_ time.**
 It aims at building, testing, and releasing software
 with greater speed and frequency.
 The approach helps reduce the cost, time, and risk of delivering changes
