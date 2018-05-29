@@ -5,7 +5,7 @@ so Travis-CI can _deploy_ your App _automatically_.
 
 ## Why?
 
-Continuous Deployment _completely_ automates the process of
+Continuous Deployment **_completely_ automates** the process of
 deploying the latest version of the project/application to a given environment.
 This saves a _considerable_ amount of time for the team as
 there are no _manual_ steps to perform each time a new feature or bug-fix
@@ -24,10 +24,9 @@ to ship your App to (_one or more_) server instance(s) via `SSH`.
 
 ### Is it "_Secure_"?
 
-The SSH key is created and _ecrypted_ on the _server_
+The SSH key is created and _ecrypted_
 and is _never_ transmitted in plaintext.
 Only Travis-CI can _decrypt_ the key.
-
 
 _**Note**: if you are using the **paid version** of Travis-CI,
 you can use the Web-UI to add an SSH Key. <br />
@@ -41,7 +40,7 @@ This guide is intended for:
  + People who have "outgrown Heroku" (_the **easy** way to deploy apps..._)
  or whose project/client/manager does not _allow_ them to use Heroku.
  + Anyone who wants/needs "_full control_" over their deployment/platform.
- + Eager-beavers who are curious about "DevOps".
+ + Eager-beavers who are _curious_ about "DevOps".
 
 
 ## How?
@@ -276,7 +275,7 @@ see: https://gist.github.com/lukewpatterson/4242707
 but we feel that it adds a lot of "noise" to the `.travis.yml` file.
 Decide for yourself which you prefer; be consistent across your projects.
 
-
+<!-- see: https://github.com/dwyl/learn-travis/issues/42#issuecomment-392257518
 ### 6. _Encrypt_ the SSH Key Passphrase
 
 Since we used a `passphrase` for our SSH key in step 2 (_above_),
@@ -307,8 +306,9 @@ env:
 
 This is the Git commit where I did this for our "example" project:
 https://github.com/nelsonic/hello-world-node-http-server/commit/b7c00b889f1e5d8663613b4514e8e6e31ea99115
+-->
 
-#### 6.1 Set the RSA Key as the "preferred key" in `.travis.yml`
+#### 5.1 Set the RSA Key as the "preferred key" in `.travis.yml`
 
 We already added the _encrypted_ RSA key to our repository in step 5 (_above_)
 but we _also_ need to add the RSA key as the "preferred key" on Travis-CI.
@@ -316,20 +316,12 @@ To do that, add the following line to your `.travis.yml` file:
 ```yml
 - ssh-add ./deploy_key
 ```
-_ensure_ that this line is just _after_ the key decryption line.
-e.g:
-```yml
+_ensure_ that this line is _after_ the key decryption line.
+Example: https://github.com/nelsonic/hello-world-node-http-server/blob/master/.travis.yml#L13
 
-```
-example:
 
-<!--
-> To our knowledge,
-this is "secure":
-https://blog.travis-ci.com/2016-11-23-security-vulnerability-environment-variables/
--->
 
-### 7. Test it on Travis-CI
+### 6. Test it on Travis-CI!
 
 The ["proof of the pudding"](https://en.wiktionary.org/wiki/the_proof_of_the_pudding_is_in_the_eating)
 is _confirming_ that Travis-CI can execute an SSH command
@@ -337,56 +329,29 @@ on your server instance ...
 
 Add the following lines to your `.travis.yml` file:
 
-
-
-
-
-
-
-#### Set StrictHostKeyChecking no for Server
-
-```
-before_script:
-  - echo -e "Host heroku.com\n\tStrictHostKeyChecking no\n" >> ~/.ssh/config
-```
-e.g:
-```
-before_script:
-  - echo -e "Host 138.68.163.126\n\tStrictHostKeyChecking no\n" >> ~/.ssh/config
-```
-
-Via: https://stackoverflow.com/questions/16638573/auto-authorize-ssh-auth-requests-on-travis-ci
-
-
-#### Install `sshpass`
-
-In order to pass the SSH Key password into any ssh commands,
-we need  to use this tiny program called `sshpass`.
-see:
-
-Ubuntu (the OS on Travis-CI):
 ```sh
-apt-get install sshpass
+- eval "$(ssh-agent -s)"
+- chmod 600 ./deploy_key
+- echo -e "Host $SERVER_IP_ADDRESS\n\tStrictHostKeyChecking no\n" >> ~/.ssh/config
+- ssh-add ./deploy_key
+- ssh -i ./deploy_key root@138.68.163.126 pwd
 ```
+Let's walkthrough those lines ...
+- `eval "$(ssh-agent -s)"` = start the `ssh-agent` (_so that we can run ssh commands_)
+- `chmod 600 ./deploy_key` = change permissions on `deploy_key` to avoid warnings.
+- `echo -e "Host $SERVER_IP_ADDRESS\n\tStrictHostKeyChecking no\n" >> ~/.ssh/config` =
+avoid Travis asking if we want to "check" the identity of our host (VPS) Via: https://stackoverflow.com/questions/16638573/auto-authorize-ssh-auth-requests-on-travis-ci
+- `ssh-add ./deploy_key` = add the `deploy_key` as our _preferred_ `ssh` RSA key.
+- `ssh -i ./deploy_key root@138.68.163.126 pwd` = run the `pwd` command
+on the deployment server using the `deploy_key` as our "identity" file (RSA Key)
 
-Mac:
-```sh
-brew install https://raw.githubusercontent.com/kadwanev/bigboybrew/master/Library/Formula/sshpass.rb
-```
+If the `ssh` command works on Travis-CI
+(_which it should if you followed each step of this guide..._)
+You should see something _similar_ to the folloiwng output:
+https://travis-ci.org/nelsonic/hello-world-node-http-server/builds/385702903#L457
+![ssh-pwd-success-travis-ci](https://user-images.githubusercontent.com/194400/40725130-8a4134f6-641a-11e8-86b8-c948b5b0d0dc.png)
 
-see: https://gist.github.com/arunoda/7790979
-
-### ??.
-
-_Securely_
-Note: we are only downloading this _temporarily_
-and will `delete` it once we have confirmed that
-our deployment pipeline is _working_.
-
-> Run the following command from the directory where the
-_decrypted_ SSH key is:
-
->> ssh ...
+Full _example_ (_working_) [`.travis.yml`](https://github.com/nelsonic/hello-world-node-http-server/blob/master/.travis.yml#L7-L16) file.
 
 
 
