@@ -15,7 +15,8 @@
 
 </div>
 
-Our ***quick guide*** to **Travis CI** (*Continuous Integration*) for ***complete beginners***
+Our ***quick guide*** to **Travis CI** (*Continuous Integration*)
+for ***complete beginners***
 
 ##  Index
 
@@ -34,14 +35,15 @@ Our ***quick guide*** to **Travis CI** (*Continuous Integration*) for ***complet
     1. [Include Environment Variables in your `.travis.yml` file](#environment-variables-travis.yml)
     2. [Add environment Variables in the Web Interface](#environment-variables-web-interface)
     3. [Secure (Encrypted) Environment Variables](#environment-variables-secured)
-5.  [Elm Lang](#elm-lang)
-6.  [Elixir](#elixir-lang)
-7.  [Install Travis-CLI on Ubuntu](#install-travis-cli-on-ubuntu)
-8.  [Going further](#going-further)
+6.  [**Continuous _Delivery_**](#continuous-delivery)
+    1. [Add Encrypted SSH Keys]()
+7.  [Elm Lang](#elm-lang)
+8.  [Elixir](#elixir-lang)
+9.  [Install Travis-CLI on Ubuntu](#install-travis-cli-on-ubuntu)
+10.  [Going further](#going-further)
     1.  [General CI Background Reading](#general-ci)
     2.  [Travis Specific](#travis-specific)
     3.  [Competitors](#competitors)
-9.  [TODO](#todo)  
 
 <a name="why"></a>
 ## Why?
@@ -51,8 +53,10 @@ is the most important part of a project.
 
 ![Toilet Roll Blocks Seat FAIL](https://user-images.githubusercontent.com/194400/28815447-5458823c-7699-11e7-8c65-bcf9e4569388.png "Toilet Roll Blocks Seat from Closing. Fail!")
 
-> ***CI*** helps you **Test Early, Test Often** to spot "*integration issues*" *before its too late ...*  
-> **Travis CI** takes the *hassle* out of running your own CI so you can focus on your project/product!
+> ***CI*** helps you **Test Early, Test Often** to spot "*integration issues*"
+_before its too late ..._
+> **Travis CI** takes the *hassle* out of running your own CI
+so you can focus on your project/product!
 
 <a name="what"></a>
 ## What?
@@ -60,23 +64,28 @@ is the most important part of a project.
 > **C**ontinuous **I**ntegration is a software development process  
 > in which **all development work** is **integrated** at a predefined time  
 > or event and the resulting ***work is automatically tested and built***.  
-> The idea is that **development errors** are **identified** very ***early*** in the process.
+> The idea is that **development errors** are **identified**
+_very **early**_ in the process.
 
 ![Continuous Integration Diagram](https://cloud.githubusercontent.com/assets/1128312/20186823/ddfdbb9e-a771-11e6-9e99-4720e7b60f53.png)
 
-If you are ***completely new*** to Continuous Integration (CI) we ***recommend reading***  
-the [**CI Wikipedia Article**](http://en.wikipedia.org/wiki/Continuous_integration)
+If you are ***completely new*** to Continuous Integration (CI)
+we ***recommend reading*** the
+[**CI Wikipedia Article**](http://en.wikipedia.org/wiki/Continuous_integration)
 and Martin Fowler's
 [Article on CI](http://www.martinfowler.com/articles/continuousIntegration.html).
 
-**Note**: Both of these are quite *text-heavy* but contain all the info you need.  
+**Note**: Both of these are quite *text-heavy*
+but contain all the info you need.  
 Read them! If you have any questions,
 [*ask*!](https://github.com/dwyl/learn-travis/issues)
 
 <a name="key-advantages"></a>
 ### *Key Advantages* of Travis-CI:  
 
-- **Nothing to** ***Install*** (Travis is Web-Based, ***Not*** *a* ***heavy Java*** *Application you have to host yourself*<sup>1</sup>)
+- **Nothing to** ***Install*** (Travis is Web-Based,
+  ***Not*** *a* ***heavy Java***
+  *Application you have to host yourself*<sup>1</sup>)
 - **Free** Both to *Use* and **Open Source** (MIT License) see: http://about.travis-ci.org/
 - **Integrates** nicely with **GitHub** (*without any developer effort*!)
 
@@ -280,7 +289,8 @@ If you are new to ***automated testing***, we have a
 
  - https://github.com/dwyl/learn-tdd  
 
-Which will show you how to use Travis-CI to check your code is working as expected!
+Which will show you how to use Travis-CI
+to check your code is working as expected!
 
 <a name="environment-variables"></a>
 ## Using *Environment Variables* with Travis!
@@ -316,13 +326,15 @@ your environment variables and their corresponding values.
 ### 2. Add environment Variables in the Web Interface
 
 Another way of telling Travis-CI your environment variable(s)
-is to add them in the web-base user-interface (Web UI) in your project's settings page:
+is to add them in the web-base user-interface (Web UI)
+in your project's settings page:
 
 ![add travis-ci environment variables Web UI](https://user-images.githubusercontent.com/194400/28816067-5a2c99ee-769b-11e7-92da-c9187e0c8aa2.png)
 
 *Notice* how in if you add your environment variables in the Travis Web UI
 they are hidden (*from the build log*) by default.
-This does *not* prevent you from accidentally `console.log` them and exposing a key/password.
+This does *not* prevent you from accidentally `console.log`
+them and exposing a key/password.
 
 So take care when console.logging ...!
 
@@ -361,6 +373,41 @@ Type `yes` to confirm you are your project, you should now see your encrypted va
 
 Paste this in your `.travis.yml` file, commit and push it to GitHub!
 
+
+<a name="continuous-delivery"></a>
+## Continuous _Delivery_ 🚀
+
+**Continuous delivery** (**CD**) is a software engineering approach
+in which teams produce software in **short cycles**,
+ensuring that the software can be **reliably released** at **_any_ time.**
+It aims at building, testing, and releasing software
+with greater speed and frequency.
+The approach helps reduce the cost, time, and risk of delivering changes
+by allowing for more incremental updates to applications in production.
+A straightforward and repeatable **deployment process**
+is important for continuous delivery. <br />
+https://en.wikipedia.org/wiki/Continuous_delivery
+
+Travis-CI can help with the **deployment process**
+and there are _many_ tools you can use to deploy your App(s)
+to a wide variety of "Cloud Infrastructure" or "Platform" providers.
+
+> _**Note**: we consider this an "**advanced**" topic.
+If you have not yet used Heroku (with GitHub hooks)
+we **highly recommend** that you use that approach **first**
+see:_ https://github.com/dwyl/learn-heroku <br />
+_Once your App has "traction" and you have "outgrown Heroku"
+(or your "Product Owner / Client" does no "allow" you to use Heroku)
+return to this topic and our "**DevOps**" tutorial:_
+https://github.com/dwyl/learn-devops
+
+### Add an Encrypted SSH Key to Travis-CI for Deployment
+
+We decided to give this walkthrough it's own file/page
+(_to avoid "cluttering" the main "beginners" tutorial_):
+[`encrypted-ssh-keys-deployment.md`](https://github.com/dwyl/learn-travis/blob/master/encrypted-ssh-keys-deployment.md)
+
+<br /><br />
 
 <a name="elm-lang"></a>
 ## Elm-lang Project
@@ -460,10 +507,11 @@ which will improve your understanding about CI overall, Travis and other tools t
 - circle-ci: https://circleci.com/, [learn-circleci](https://github.com/dwyl/learn-circleci)
 - codeship: https://codeship.com/, [learn-codeship](https://github.com/dwyl/learn-codeship)
 
-
+<!--
 <a name="todo"></a>
 ## TODO
 
 - **ALL** The Diagrams on Google Image Search for Continuous Integration are terrible!
 https://www.google.com/search?q=continuous+integration&source=lnms&tbm=isch
 *we* either need to make time to draw one or ask/commission someone to do one for us!
+-->
