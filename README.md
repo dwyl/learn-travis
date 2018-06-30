@@ -1,7 +1,7 @@
 # Learn Travis
 
 <div align="center">
-    <a href="https://travis-ci.org/">
+    <a href="https://travis-ci.com/">
         <img src="https://travis-ci.com/images/logos/Tessa-pride-4.svg" width="175">
     </a>
 </div>
@@ -11,7 +11,7 @@
 
 [![Build Status](https://travis-ci.org/dwyl/learn-travis.svg?branch=master)](https://travis-ci.org/dwyl/learn-travis)
 [![contributions welcome](https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=flat)](https://github.com/dwyl/learn-travis/issues)
-[![HitCount](http://hits.dwyl.io/dwyl/learn-travis.svg)](http://hits.dwyl.io/dwyl/learn-travis)
+[![HitCount](https://hits.dwyl.io/dwyl/learn-travis.svg)](https://hits.dwyl.io/dwyl/learn-travis)
 
 </div>
 
@@ -71,9 +71,9 @@ _very **early**_ in the process.
 
 If you are ***completely new*** to Continuous Integration (CI)
 we ***recommend reading*** the
-[**CI Wikipedia Article**](http://en.wikipedia.org/wiki/Continuous_integration)
+[**CI Wikipedia Article**](https://en.wikipedia.org/wiki/Continuous_integration)
 and Martin Fowler's
-[Article on CI](http://www.martinfowler.com/articles/continuousIntegration.html).
+[Article on CI](https://www.martinfowler.com/articles/continuousIntegration.html).
 
 **Note**: Both of these are quite *text-heavy*
 but contain all the info you need.  
@@ -86,13 +86,13 @@ Read them! If you have any questions,
 - **Nothing to** ***Install*** (Travis is Web-Based,
   ***Not*** *a* ***heavy Java***
   *Application you have to host yourself*<sup>1</sup>)
-- **Free** Both to *Use* and **Open Source** (MIT License) see: http://about.travis-ci.org/
+- **Free** Both to *Use* and **Open Source** (MIT License) see: https://about.travis-ci.com/
 - **Integrates** nicely with **GitHub** (*without any developer effort*!)
 
 
-<sup>1</sup>We've used [Jenkins CI](http://jenkins-ci.org) in the past for *client* projects,  
+<sup>1</sup>We've used [Jenkins CI](https://jenkins-ci.org) in the past for *client* projects,  
 but **Jenkins** has a
-[***steep learning curve***](http://shop.oreilly.com/product/0636920010326.do)
+[***steep learning curve***](https://shop.oreilly.com/product/0636920010326.do)
 for *new developers*.  
 **Travis** *by contrast* has a much ***shallower learning curve***!
 
@@ -116,15 +116,15 @@ to some of the tools used and chapter 6.
 <a name="getting-started"></a>
 ### Getting Started
 
-Following the [Travis Getting Started](http://about.travis-ci.org/docs/user/getting-started/) guide:
+Following the [Travis Getting Started](https://about.travis-ci.com/docs/user/getting-started/) guide:
 
-> Visit: https://travis-ci.org/ and click "**Sign in with GitHub**" no "*registration*" required.
+> Visit: https://travis-ci.com/ and click "**Sign in with GitHub**" no "*registration*" required.
 
-![Travis Login with GitHub](https://user-images.githubusercontent.com/194400/28815478-6b49c546-7699-11e7-9bc1-fe1ec36e4967.png "Sign in with GitHub")
+![Travis Login with GitHub](https://user-images.githubusercontent.com/7784660/42061902-fed5be72-7b2b-11e8-9f70-7c4eec7e1807.jpg "Sign in with GitHub")
 
 > You will be re-directed to GitHub where you need to click "**Authorize application**"
 
-![Authorize Travis at GitHub](https://user-images.githubusercontent.com/194400/28815493-7a9b1be4-7699-11e7-8f67-36b547bac915.png "Authorize Travis GitHub")
+![Authorize Travis at GitHub](https://user-images.githubusercontent.com/7784660/42060974-e6384036-7b28-11e8-9aa1-1535dabe0dee.jpg "Authorize Travis GitHub")
 
 **Note**: If you ever want to *stop* Travis accessing to your GitHub account,  
 simply visit: https://github.com/settings/applications and click on *Revoke*.
@@ -132,9 +132,13 @@ simply visit: https://github.com/settings/applications and click on *Revoke*.
 > Once you have allowed access you will be taken back to Travis  
 > where you will need to enable a specific Git Repository.  
 > You can also do this in your Travis Profile:
-https://travis-ci.org/profile
+https://travis-ci.com/profile
 
-![Enable Repo in Travis](https://user-images.githubusercontent.com/194400/28815577-bd0922e6-7699-11e7-90ea-ba891933f2ce.png "Travis Enable Repo")
+![Activate Travis](https://user-images.githubusercontent.com/7784660/42061901-feb97028-7b2b-11e8-9ac5-75e32a181087.jpg "Activate Travis")
+
+![Install Travis](https://user-images.githubusercontent.com/7784660/42060973-e61fe702-7b28-11e8-8e40-f99e26281750.jpg "Install Travis")
+
+![Travis is enabled](https://user-images.githubusercontent.com/7784660/42060971-e60747d8-7b28-11e8-9d70-6fbc1964f217.jpg "Travis is enabled")
 
 <a name="create-the-project-files"></a>
 ### Create The Project Files
@@ -174,7 +178,7 @@ versions if you want to and to customize your build process:
 
 Because this specific file is so vital, it is mandatory that you place it in the
 root of your project folder and that you also validate it, either via the
-[Travis-CLI ](#install-travis-cli-on-ubuntu) or via their [WebLint](http://lint.travis-ci.org/).
+[Travis-CLI ](#install-travis-cli-on-ubuntu) or via their [WebLint](https://lint.travis-ci.com/).
 
 Second, lets create our `hello.js` file by pasting the following code:
 
@@ -252,7 +256,7 @@ http.createServer(function (req, res) {
 console.log('Server running at http://127.0.0.1:1337/');
 ```
 
-![Travis Build Failing](https://raw.github.com/dwyl/learn-travis/master/images/06-travis-build-failing.png "Travis Build Failing")
+![Travis Build Failing](https://user-images.githubusercontent.com/7784660/42061581-02169b84-7b2b-11e8-9349-fb2e2c8800f5.png "Travis Build Failing")
 
 ![Travis Build Failing Error Message](https://user-images.githubusercontent.com/194400/28815609-d7ec720c-7699-11e7-9376-56d438b1d2d8.png "Travis Build Failing Error Message")
 
@@ -276,7 +280,7 @@ And just like that our "**build**" is ***passing***!
 
 ![Travis Build Passing](https://user-images.githubusercontent.com/194400/28816018-33a38120-769b-11e7-9f2f-28b7e325e9ed.png "Travis Build Passing")
 
-![Build Status](https://user-images.githubusercontent.com/194400/28816007-2d303ec8-769b-11e7-8d75-8d1fbd93592c.png "Build Status: Passing")
+![Build Status](https://user-images.githubusercontent.com/7784660/42061710-52037982-7b2b-11e8-9e1c-1f9330e8adbf.png "Build Status: Passing")
 
 
 <a name="realistic-example"></a>
@@ -343,12 +347,12 @@ So take care when console.logging ...!
 
 If you are storing sensitive information (*like API Keys or Database Passwords*)
 for use in your node app, the ***best way*** is to use the
-[travis ruby gem](http://docs.travis-ci.com/user/encryption-keys/)
+[travis ruby gem](https://docs.travis-ci.com/user/encryption-keys/)
 to **encrypt** your keys:
 
 You will need to have ruby installed on your computer,
 if you don't already have this, we recommend installing it with
-[RVM](http://stackoverflow.com/a/14182172/1148249):
+[RVM](https://stackoverflow.com/a/14182172/1148249):
 
 ```sh
 \curl -L https://get.rvm.io | bash -s stable --ruby
@@ -486,23 +490,23 @@ which will improve your understanding about CI overall, Travis and other tools t
 <a name="general-ci"></a>
 ### General CI Background Reading
 
-- Continuous Integration Wikipedia Article: http://en.wikipedia.org/wiki/Continuous_integration
-- Martin Fowler's Article on CI: http://www.martinfowler.com/articles/continuousIntegration.html
+- Continuous Integration Wikipedia Article: https://en.wikipedia.org/wiki/Continuous_integration
+- Martin Fowler's Article on CI: https://www.martinfowler.com/articles/continuousIntegration.html
 - CI Beginners Guide Video: https://vimeo.com/19596466
-- Great Book on CI: http://www.amazon.com/Continuous-Integration-Improving-Software-Reducing/dp/0321336380/
+- Great Book on CI: https://www.amazon.com/Continuous-Integration-Improving-Software-Reducing/dp/0321336380/
 
 <a name="travis-specific"></a>
 ### Travis Specific
 
-- Travis Getting Started: http://about.travis-ci.org/docs/user/getting-started/
-- Build Podcast Ep.32 (Travis) Video: http://build-podcast.com/travisci/
+- Travis Getting Started: https://about.travis-ci.com/docs/user/getting-started/
+- Build Podcast Ep.32 (Travis) Video: https://build-podcast.com/travisci/
 - [@sayanee_](https://twitter.com/sayanee_)'s Build Podcast GitHub: https://github.com/sayanee/build-podcast/tree/master/032-travisci
-- Travis-CI Environment Variables guide: http://docs.travis-ci.com/user/environment-variables/
+- Travis-CI Environment Variables guide: https://docs.travis-ci.com/user/environment-variables/
 
 <a name="competitors"></a>
 ### Competitors
 
-- Comparison of CI Software: http://en.wikipedia.org/wiki/Comparison_of_continuous_integration_software
+- Comparison of CI Software: https://en.wikipedia.org/wiki/Comparison_of_continuous_integration_software
 - Travis CI Alternatives https://www.quora.com/What-are-the-alternatives-to-Travis-CI-Are-there-any-alternative-hosted-CI-services-for-open-source-projects
 - circle-ci: https://circleci.com/, [learn-circleci](https://github.com/dwyl/learn-circleci)
 - codeship: https://codeship.com/, [learn-codeship](https://github.com/dwyl/learn-codeship)
