@@ -113,12 +113,12 @@ _given that we are "trusting" Travis-CI with the_ `private` _key
 there is not much **point** adding_ `password` _to it, because
 the_ `password` _can easily be_
 ["_stripped_"](https://stackoverflow.com/questions/112396)
-_once the key is decrypted._
-_and, given that Travis **needs** to "know"_
-_the_ `password` _in order to **use** the key.
-If an "attacker" was to gain access to Travis' system and had their_
+_once the key is decrypted_
+_and given that Travis **needs** to "know"_
+_the_ `password` _in order to **use** the key,
+if an "attacker" was to gain access to Travis' system and had their_
 `private` _key, the **Internet** would "break"!_
-_seriously, enough NPM packages are
+_Seriously, enough NPM packages are
 **automatically published** by Travis-CI that it would be_
 ["`left-pad` _gate_"](https://www.theregister.co.uk/2016/03/23/npm_left_pad_chaos)
 _times a **million** if Travis were compromised!_
