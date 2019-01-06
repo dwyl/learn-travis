@@ -24,7 +24,7 @@ to ship your App to (_one or more_) server instance(s) via `SSH`.
 
 ### Is it "_Secure_"?
 
-The SSH key is created and _ecrypted_
+The SSH key is created and _encrypted_
 and is _never_ transmitted in plaintext.
 Only Travis-CI can _decrypt_ the key.
 
