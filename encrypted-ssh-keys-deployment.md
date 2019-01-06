@@ -247,7 +247,7 @@ If you are "_stuck_" using windows see: https://rubyinstaller.org
 
 ### 5. _Encrypt_ the Private Key
 
-Use the `travis` CLI to encrypt the key on your `localhos`:
+Use the `travis` CLI to encrypt the key on your `localhost`:
 
 ```
 touch .travis.yml && travis encrypt-file ./deploy_key --add
