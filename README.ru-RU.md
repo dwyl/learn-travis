@@ -95,8 +95,8 @@ _пока не стало слишком поздно ..._
 Этот учебник займет у вас **20 минут** и ***сэкономит вам часы***
 разочарования! #**БезМозгов**
 
-<a name="pre-requisites"></a>
-### Pre-requisites
+<a name="предпосылки"></a>
+### Предпосылки
 
 + **Компьютер** *с* ***установленым*** **node.js**
 + любой **текстовый редактор**
@@ -397,3 +397,78 @@ https://github.com/dwyl/learn-devops
 [`encrypted-ssh-keys-deployment.md`](https://github.com/dwyl/learn-travis/blob/master/encrypted-ssh-keys-deployment.md)
 
 <br /><br />
+
+<a name="elm-lang"></a>
+## Elm-lang
+
+@dwyl мы используем (_и **настоятельно рекомендуем**_) Elm.
+
+> Если вы новичок в Elm см.:
+[https://github.com/dwyl/**learn-elm**](https://github.com/dwyl/learn-elm)
+
+Если вам нужн _простой_ `.travis.yml` файл для использование с проектами Elm,
+пожалуйста см: https://github.com/nelsonic/photo-groove/blob/master/.travis.yml
+
+Более подробно см. наш выпуск расследование этого:
+https://github.com/dwyl/learn-travis/issues/31
+(_мы посмотрели на несколько известных проектов Elm, чтобы выделить config/script_)
+
+
+<a name="elixir-lang"></a>
+## Elixir-lang
+
+@dwyl мы используем (_и **настоятельно рекомендуем**_) Elixir для серверных приложений.
+
+> Если вы новичок в Elixir пожалуйста см:
+[https://github.com/dwyl/**learn-elixir**](https://github.com/dwyl/learn-elixir)
+
+Чтобы начать работу, проекту Elixir нужны только следующие строки
+в файле `.travis.yml`:
+
+```yml
+language: elixir
+elixir:
+  - 1.6
+env:
+  - MIX_ENV=test
+script:
+  - mix test
+```
+
+Если вам нужн _простой_ `.travis.yml` файл
+для использование с проектами Elixir, пожалуйста см:
+https://github.com/dwyl/hits-elixir/blob/master/.travis.yml
+
+
+<a name="установка-travis-cli-на-ubuntu"></a>
+## Установка Travis-CLI на Ubuntu
+
+> Может быть полезно, если необходимо, например, зашифровать ключи в программе установки с помощью внешних
+> инструментов развертывания, таких как s3, чтобы просто проверить синтаксис .travis.yml делая простую "корпию travis"
+> или любые другие дополнительные операции
+
+Процесс установки на официальной странице https://github.com/travis-ci/travis.rb#installation не хватает немного помощи и деталей.
+Даже при установке пакета разработки ruby могут возникнуть проблемы.
+Но процесс, кажется, работает безупречно с RVM (Ruby version manager), как описано выше: https://rvm.io/rvm/install
+
+Просто выполните следующие команды:
+
+```sh
+gpg --keyserver hkp://keys.gnupg.net --recv-keys 409B6B1796C275462A1703113804BB82D39DC0E3
+\curl -sSL https://get.rvm.io | bash -s stable --ruby
+```
+
+теперь добавьте эту строку в конце файла ~/.bashrc:
+source "$HOME/.rvm/scripts/rvm"
+
+```sh
+source ~/.bashrc
+gem install travis
+travis --version
+```
+<a name="going-further"></a>
+## Going further
+
+This tutorial is meant to be only but a first contact with Travis and the world of CI.
+If you liked what have you seen so far, you can delve deeper into the following topics
+which will improve your understanding about CI overall, Travis and other tools that support Node.js.
