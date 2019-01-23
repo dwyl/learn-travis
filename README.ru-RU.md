@@ -31,7 +31,7 @@
     5.  [Наблюдение за неудачами](#наблюдение-за-неудачами)
     6.  [Правильный код для прохождения сборки](#правильный-код-для-сборки)
 4.  [Пример](#пример)
-5.  [Использование переменных окружений с Travis!](#переменная-окружения)
+5.  [Использование переменных окружений с Travis!](#переменные-окружения)
     1. [Включение переменных окружений в вашем `.travis.yml` файле](#переменные-окружения-travis.yml)
     2. [Добавление переменных окружений в веб-интерфейс](#переменные-окружения-web-интерфейс)
     3. [Безопасные (Зашифрованные) переменные среды](#защищенные-переменные-окружения)
@@ -281,24 +281,24 @@ console.log('Server running at http://127.0.0.1:1337/');
 Который покажет вам, как использовать Travis-CI
 чтобы проверить ваш код, как положено!
 
-<a name="environment-variables"></a>
-## Using *Environment Variables* with Travis!
+<a name="переменные-окружения"></a>
+## Использование *переменных окружений* с Travis!
 
-> If you are ***new to environment variables***
-check out our ***introductory tutorial*** (*for complete beginners*):
+> Если вы ***новичек в переменных окружений***
+просмотрите наш ***вводный урок*** (*для начинающих*):
 https://github.com/dwyl/learn-environment-variables/
 
-Often your application will use **environment variables** to store
-keys, passwords or other sensitive data you don't want to hard-code in your
-code; Travis-CI makes this **easy**:
+Часто ваше прилодение **переменные окружения** для хранения
+ключей, паролей или других конфидиционных данных, которые вы не захотите использовать часто в вашем
+коде; Travis-CI делает это **легко**:
 
-There are **three ways** of telling Travis-CI about your environment variables:
+Существует **три способа** рассказать Travis-CI о ваших переменных окружений:
 
-<a name="environment-variables-travis.yml"></a>
-### 1. Include Environment Variables in your `.travis.yml` file
+<a name="переменные-окружения-travis.yml"></a>
+### 1. Включение переменных окружений в вашем `.travis.yml` файле
 
-The easiest and most explicit way of listing your environment variables
-is to add them to your `.travis.yml` file:
+Самый простой и явный способ перечисления переменных сред
+это добавить их к вашему `.travis.yml` файлу:
 
 ```yml
 language: node_js
