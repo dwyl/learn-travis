@@ -377,23 +377,23 @@ travis encrypt MY_SECRET=super_secret
 важно для непрерывной поставки. <br />
 https://en.wikipedia.org/wiki/Continuous_delivery
 
-Travis-CI может помочь с **deployment process**
-and there are _many_ tools you can use to deploy your App(s)
-to a wide variety of "Cloud Infrastructure" or "Platform" providers.
+Travis-CI может помочь с **процессом развертывания**
+и есть _много_ инструментов которые можно использовать для развертывания приложения(й)
+для широкого спектра поставщиков "облачной инфраструктуры" или "платформ".
 
-> _**Note**: we consider this an "**advanced**" topic.
-If you have not yet used Heroku (with GitHub hooks)
-we **highly recommend** that you use that approach **first**
-see:_ https://github.com/dwyl/learn-heroku <br />
-_Once your App has "traction" and you have "outgrown Heroku"
-(or your "Product Owner / Client" does no "allow" you to use Heroku)
-return to this topic and our "**DevOps**" tutorial:_
+> _**Заметка**: мы считаем это "**современная**" тема.
+Если вы еще не использовали Heroku (с крючками GitHub)
+мы **настоятельно рекомендуем** использовать этот подход в **первую** очередь
+см:_ https://github.com/dwyl/learn-heroku <br />
+_Как только ваше приложение имеет "тягу", и вы "переросли Heroku"
+(или ваш "владелец продукта/клиент" не "позволяет" вам использовать Heroku)
+вернитесь к этой теме и нашему учебнику "**DevOps**:_
 https://github.com/dwyl/learn-devops
 
-### Add an Encrypted SSH Key to Travis-CI for Deployment
+### Добавление зашифрованных ключей SSH
 
-We decided to give this walkthrough it's own file/page
-(_to avoid "cluttering" the main "beginners" tutorial_):
+Мы решили дать это пошаговое руководство на нашей собственном файле/страница
+(_чтобы не "загромождать" основной учебник для начинающих_):
 [`encrypted-ssh-keys-deployment.md`](https://github.com/dwyl/learn-travis/blob/master/encrypted-ssh-keys-deployment.md)
 
 <br /><br />
