@@ -481,19 +481,19 @@ travis --version
 - CI руководство для начинающих видео: https://vimeo.com/19596466
 - Большая книга о CI: https://www.amazon.com/Continuous-Integration-Improving-Software-Reducing/dp/0321336380/
 
-<a name="travis-specific"></a>
-### Travis Specific
+<a name="спецификация-travis"></a>
+### Спецификация Travis
 
-- Travis Getting Started: https://about.travis-ci.com/docs/user/getting-started/
-- Build Podcast Ep.32 (Travis) Video: https://build-podcast.com/travisci/
-- [@sayanee_](https://twitter.com/sayanee_)'s Build Podcast GitHub: https://github.com/sayanee/build-podcast/tree/master/032-travisci
-- Travis-CI Environment Variables guide: https://docs.travis-ci.com/user/environment-variables/
+- Travis начало работы: https://about.travis-ci.com/docs/user/getting-started/
+- Подкаст Эп.32 (Travis) видео: https://build-podcast.com/travisci/
+- [@sayanee_](https://twitter.com/sayanee_)'s Подкаст GitHub: https://github.com/sayanee/build-podcast/tree/master/032-travisci
+- Руководство по переменным среды Travis-CI: https://docs.travis-ci.com/user/environment-variables/
 
-<a name="competitors"></a>
-### Competitors
+<a name="конкуренты"></a>
+### Конкуренты
 
-- Comparison of CI Software: https://en.wikipedia.org/wiki/Comparison_of_continuous_integration_software
-- Travis CI Alternatives https://www.quora.com/What-are-the-alternatives-to-Travis-CI-Are-there-any-alternative-hosted-CI-services-for-open-source-projects
+- Сравнение программного обеспечения CI: https://en.wikipedia.org/wiki/Comparison_of_continuous_integration_software
+- Travis CI альтернативы https://www.quora.com/What-are-the-alternatives-to-Travis-CI-Are-there-any-alternative-hosted-CI-services-for-open-source-projects
 - circle-ci: https://circleci.com/, [learn-circleci](https://github.com/dwyl/learn-circleci)
 - codeship: https://codeship.com/, [learn-codeship](https://github.com/dwyl/learn-codeship)
 
@@ -501,7 +501,7 @@ travis --version
 <a name="todo"></a>
 ## TODO
 
-- **ALL** The Diagrams on Google Image Search for Continuous Integration are terrible!
+- **ВСЕ** Диаграммы на Google Image Search для непрерывной интеграции ужасны!
 https://www.google.com/search?q=continuous+integration&source=lnms&tbm=isch
-*we* either need to make time to draw one or ask/commission someone to do one for us!
+*мы* нам либо нужно найти время, чтобы нарисовать его, либо попросить/поручить кому-нибудь сделать это для нас!
 -->
