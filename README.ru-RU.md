@@ -361,3 +361,39 @@ travis encrypt MY_SECRET=super_secret
 ![learn-travis-encrypted-variable](https://user-images.githubusercontent.com/194400/28816106-7ed7e1c2-769b-11e7-9601-39de2ec31e62.png)
 
 Вставьте это в `.travis.yml` файл, сохраните, создайте коммит и отправьте на GitHub!
+
+
+<a name="непрерывная-доставка"></a>
+## Непрерывная _доставка_ 🚀
+
+**Непрерывная доставка** (**НД**) это подход к программной инженерии
+в которых команды производят программное обеспечение в **коротком цикле**,
+обеспечение может быть **надежно выпущена** в **_любое_ время.**
+Он направлен на создание, тестирование и выпуск программного обеспечения
+с большей скоростью и частотой.
+Такой подход позволяет сократить затраты, время и риски, связанные с внесением изменений
+позволяя более добавочные обновления для применения в производстве.
+Простая и посторяемая **непрерывная доставка**
+важно для непрерывной поставки. <br />
+https://en.wikipedia.org/wiki/Continuous_delivery
+
+Travis-CI может помочь с **deployment process**
+and there are _many_ tools you can use to deploy your App(s)
+to a wide variety of "Cloud Infrastructure" or "Platform" providers.
+
+> _**Note**: we consider this an "**advanced**" topic.
+If you have not yet used Heroku (with GitHub hooks)
+we **highly recommend** that you use that approach **first**
+see:_ https://github.com/dwyl/learn-heroku <br />
+_Once your App has "traction" and you have "outgrown Heroku"
+(or your "Product Owner / Client" does no "allow" you to use Heroku)
+return to this topic and our "**DevOps**" tutorial:_
+https://github.com/dwyl/learn-devops
+
+### Add an Encrypted SSH Key to Travis-CI for Deployment
+
+We decided to give this walkthrough it's own file/page
+(_to avoid "cluttering" the main "beginners" tutorial_):
+[`encrypted-ssh-keys-deployment.md`](https://github.com/dwyl/learn-travis/blob/master/encrypted-ssh-keys-deployment.md)
+
+<br /><br />
