@@ -63,3 +63,21 @@ _пока не стало слишком поздно ..._
 > в котором **вся работа по разработке интегрирована** в заранее определенное время
 > или событие, и полученная ***работа автоматически проверена и построена***.
 > Идея состоит в том, что **ошибки разработки** выявляются очень рано в этом процессе.
+
+Если вы ***полный новичек*** в Непрерывной Интеграции (CI)
+мы ***рекомендуем прочитать*** [**статью CI в Wikipedia**](https://ru.wikipedia.org/wiki/Continuous_integration)
+и [статью о CI](https://www.martinfowler.com/articles/continuousIntegration.html) Мартина Фаулера.
+
+**Заметка**: Оба они довольно *объемными*
+но содержат всю необходимую информацию.
+Прочтите их! Если у вас остались вопросы,
+[*спроси*!](https://github.com/dwyl/learn-travis/issues)
+
+<a name="ключевые-преимущества"></a>
+### *Основные преимущества Travis-CI* of Travis-CI:
+
+- **Nothing to** ***Install*** (Travis is Web-Based,
+  ***Not*** *a* ***heavy Java***
+  *Application you have to host yourself*<sup>1</sup>)
+- **Free** Both to *Use* and **Open Source** (MIT License) see: https://about.travis-ci.com/
+- **Integrates** nicely with **GitHub** (*without any developer effort*!)
