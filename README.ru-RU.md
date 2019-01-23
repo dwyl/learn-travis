@@ -40,7 +40,7 @@
 7.  [Elm Lang](#elm-lang)
 8.  [Elixir](#elixir-lang)
 9.  [Установка Travis-CLI на Ubuntu](#установка-travis-cli-на-ubuntu)
-10.  [Идти дальше](#идти-дальше)
+10.  [Двигаться дальше](#двигаться-дальше)
     1.  [Дополнительно об Общей CI (Непрерывная интеграция)](#общая-ci)
     2.  [Спецификация Travis](#спецификация-travis)
     3.  [Конкуренты](#конкуренты)
@@ -65,7 +65,7 @@ _пока не стало слишком поздно ..._
 > Идея состоит в том, что **ошибки разработки** выявляются очень рано в этом процессе.
 
 Если вы ***полный новичек*** в Непрерывной Интеграции (CI)
-мы ***рекомендуем прочитать*** [**статью CI в Wikipedia**](https://ru.wikipedia.org/wiki/Continuous_integration)
+мы ***рекомендуем прочитать*** [**статью CI в Википедии**](https://ru.wikipedia.org/wiki/Continuous_integration)
 и [статью о CI](https://www.martinfowler.com/articles/continuousIntegration.html) Мартина Фаулера.
 
 **Заметка**: Оба они довольно *объемными*
@@ -466,9 +466,42 @@ source ~/.bashrc
 gem install travis
 travis --version
 ```
-<a name="going-further"></a>
-## Going further
+<a name="двигаться-дальше"></a>
+## Двигаться дальше
 
-This tutorial is meant to be only but a first contact with Travis and the world of CI.
-If you liked what have you seen so far, you can delve deeper into the following topics
-which will improve your understanding about CI overall, Travis and other tools that support Node.js.
+Этот урок предназначен только для первого знакомства с Travis и миром CI.
+Если вам понравилось то, что вы видели до сих пор, вы можете углубиться в следующие темы
+что улучшит ваше понимание CI в целом, Travis и других инструментов, поддерживающих Node.js.
+
+<a name="общая-ci"></a>
+### Дополнительно об Общей CI (Непрерывная интеграция)
+
+- Непрерывная интеграция статья Википедии: https://en.wikipedia.org/wiki/Continuous_integration
+- Статья Мартина Фаулера о CI: https://www.martinfowler.com/articles/continuousIntegration.html
+- CI руководство для начинающих видео: https://vimeo.com/19596466
+- Большая книга о CI: https://www.amazon.com/Continuous-Integration-Improving-Software-Reducing/dp/0321336380/
+
+<a name="travis-specific"></a>
+### Travis Specific
+
+- Travis Getting Started: https://about.travis-ci.com/docs/user/getting-started/
+- Build Podcast Ep.32 (Travis) Video: https://build-podcast.com/travisci/
+- [@sayanee_](https://twitter.com/sayanee_)'s Build Podcast GitHub: https://github.com/sayanee/build-podcast/tree/master/032-travisci
+- Travis-CI Environment Variables guide: https://docs.travis-ci.com/user/environment-variables/
+
+<a name="competitors"></a>
+### Competitors
+
+- Comparison of CI Software: https://en.wikipedia.org/wiki/Comparison_of_continuous_integration_software
+- Travis CI Alternatives https://www.quora.com/What-are-the-alternatives-to-Travis-CI-Are-there-any-alternative-hosted-CI-services-for-open-source-projects
+- circle-ci: https://circleci.com/, [learn-circleci](https://github.com/dwyl/learn-circleci)
+- codeship: https://codeship.com/, [learn-codeship](https://github.com/dwyl/learn-codeship)
+
+<!--
+<a name="todo"></a>
+## TODO
+
+- **ALL** The Diagrams on Google Image Search for Continuous Integration are terrible!
+https://www.google.com/search?q=continuous+integration&source=lnms&tbm=isch
+*we* either need to make time to draw one or ask/commission someone to do one for us!
+-->
