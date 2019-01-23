@@ -29,7 +29,7 @@
     3.  [Создание файлов для проекта](#создание-файлов-для-проекта)
     4.  [Определение тестов](#определение-тестов)
     5.  [Наблюдение за неудачами](#наблюдение-за-неудачами)
-    6.  [Правильный код для прохождения сборки](#correct-code-to-pass-build)
+    6.  [Правильный код для прохождения сборки](#правильный-код-для-сборки)
 4.  [Пример](#пример)
 5.  [Использование переменных окружений с Travis!](#переменная-окружения)
     1. [Включение переменных окружений в вашем `.travis.yml` файле](#переменные-окружения-travis.yml)
@@ -247,3 +247,64 @@ console.log('Server running at http://127.0.0.1:1337/');
 ![Travis Build Failing Error Message](https://user-images.githubusercontent.com/194400/28815609-d7ec720c-7699-11e7-9376-56d438b1d2d8.png "Travis Build Failing Error Message")
 
 В **строке 343** мы пропустили точку с запятой.
+
+<a name="правильный-код-для-сборки"></a>
+### Правильный код для прохождения сборки
+
+Просто добавьте точку с запятой в 4-ю строку **hello.js**, сохраните, создайте коммит и отправьте ваши изменения:
+
+```javascript
+var http = require('http');
+http.createServer(function (req, res) {
+  res.writeHead(200, {'Content-Type': 'text/plain'});
+  res.end('Hello Travis!\n'); // build should pass now!
+}).listen(1337, '127.0.0.1');
+console.log('Server running at http://127.0.0.1:1337/');
+```
+
+И наш "**build**" теперь ***passing***!
+
+![Travis Build Passing](https://user-images.githubusercontent.com/194400/28816018-33a38120-769b-11e7-9f2f-28b7e325e9ed.png "Travis Build Passing")
+
+![Build Status](https://user-images.githubusercontent.com/7784660/42061710-52037982-7b2b-11e8-9e1c-1f9330e8adbf.png "Build Status: Passing")
+
+<a name="пример"></a>
+## Пример
+
+@dwyl мы используем Travis-CI для намного *большего* чем для кодирования! Мы используем Travis-CI для
+***автоматического*** запуска наших модульных/интеграционных тестов.  
+Если вы новичек в ***автоматическом тестировании***, мы рекомендуем
+***Полное учебное пособие для начинающих по тестированию***:
+
+ - https://github.com/dwyl/learn-tdd  
+
+Который покажет вам, как использовать Travis-CI
+чтобы проверить ваш код, как положено!
+
+<a name="environment-variables"></a>
+## Using *Environment Variables* with Travis!
+
+> If you are ***new to environment variables***
+check out our ***introductory tutorial*** (*for complete beginners*):
+https://github.com/dwyl/learn-environment-variables/
+
+Often your application will use **environment variables** to store
+keys, passwords or other sensitive data you don't want to hard-code in your
+code; Travis-CI makes this **easy**:
+
+There are **three ways** of telling Travis-CI about your environment variables:
+
+<a name="environment-variables-travis.yml"></a>
+### 1. Include Environment Variables in your `.travis.yml` file
+
+The easiest and most explicit way of listing your environment variables
+is to add them to your `.travis.yml` file:
+
+```yml
+language: node_js
+node_js:
+ - "node"
+env:
+- MY_VAR=EverythignIsAwesome
+- NODE_ENV=TEST
+```
