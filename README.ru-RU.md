@@ -217,3 +217,33 @@ npm install jshint --save-dev
 Если вы это сделаете, вы увидите, что тест не прошел. Но мы не будем знакомить тебя с Travis.
 вы можете запускать тесты вручную, это работа для Travis! Давайте посмотрим, как Travis может выполнять тесты
 автоматически!
+
+<a name="наблюдение-за-неудачами"></a>
+### Наблюдение за неудачами
+
+Сохранить все файлы, которые вы только что создали и отправьте их на GitHub.
+Travis автоматически просканирует ваш репозиторий и заберет
+файл **.travis.yml** который сообщит Travis, что **node.js** проект/приложение
+дальше Travis просмотрит файл **package.json** и проверит
+запись **скрипты** (*конкретно **test**)
+Travis скачает все модули, перечисленные в вашем *devDependencies*
+и попытается запустить тестовый сценарий **npm test**.
+
+В нашем случае мы просим Travis **найти** файл **hello.js**
+и так как в файле отсутствовала точка с запятой в 4-й строке,
+это и послужило ошибкой в процессе сборки!
+
+```javascript
+var http = require('http');
+http.createServer(function (req, res) {
+  res.writeHead(200, {'Content-Type': 'text/plain'});
+  res.end('Hello Travis!\n')  // Test fails here!
+}).listen(1337, '127.0.0.1');
+console.log('Server running at http://127.0.0.1:1337/');
+```
+
+![Travis Build Failing](https://user-images.githubusercontent.com/7784660/42061581-02169b84-7b2b-11e8-9349-fb2e2c8800f5.png "Travis Build Failing")
+
+![Travis Build Failing Error Message](https://user-images.githubusercontent.com/194400/28815609-d7ec720c-7699-11e7-9376-56d438b1d2d8.png "Travis Build Failing Error Message")
+
+В **строке 343** мы пропустили точку с запятой.
