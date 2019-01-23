@@ -76,8 +76,8 @@ _пока не стало слишком поздно ..._
 <a name="ключевые-преимущества"></a>
 ### *Основные преимущества Travis-CI* of Travis-CI:
 
-- **Nothing to** ***Install*** (Travis is Web-Based,
-  ***Not*** *a* ***heavy Java***
-  *Application you have to host yourself*<sup>1</sup>)
-- **Free** Both to *Use* and **Open Source** (MIT License) see: https://about.travis-ci.com/
-- **Integrates** nicely with **GitHub** (*without any developer effort*!)
+- **Ничего для** ***Установки*** (Travis имеет Веб-основу,
+  *А* ***Не*** ***тяжелую Java***
+  *Приложение, которое вы должны разместить самостоятельно*<sup>1</sup>)
+- **Бесплатно** как для *Использования* так и с **Открытым исходным кодом** (MIT Лицезция) см: https://about.travis-ci.com/
+- Хорошо **интегрируется** с **GitHub** (*без лишних усилий разработчика*!)
