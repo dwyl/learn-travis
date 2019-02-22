@@ -320,7 +320,7 @@ language: node_js
 node_js:
  - "node"
 env:
-- MY_VAR=EverythignIsAwesome
+- MY_VAR=EverythinnIsAwesome
 - NODE_ENV=TEST
 ```
 The interesting part is the `env:` key where you can then list
