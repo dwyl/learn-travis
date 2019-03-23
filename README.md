@@ -116,7 +116,7 @@ to some of the tools used and chapter 6.
 <a name="getting-started"></a>
 ### Getting Started
 
-Following the [Travis Getting Started](https://about.travis-ci.com/docs/user/getting-started/) guide:
+Following the [Travis Getting Started](https://docs.travis-ci.com/user/tutorial/#to-get-started-with-travis-ci) guide:
 
 > Visit: https://travis-ci.com/ and click "**Sign in with GitHub**" no "*registration*" required.
 
