@@ -109,7 +109,7 @@ _пока не стало слишком поздно ..._
 <a name="начало-работы"></a>
 ### Начало работы
 
-Подпишитесь на [Travis Getting Started](https://about.travis-ci.com/docs/user/getting-started/) руководство:
+Подпишитесь на [Travis Getting Started](https://docs.travis-ci.com/user/tutorial/#to-get-started-with-travis-ci/) руководство:
 
 > Посетите: https://travis-ci.com/ и нажмите "**Войти через GitHub**" "регистрация" не требуется.
 
@@ -305,7 +305,7 @@ language: node_js
 node_js:
  - "node"
 env:
-- MY_VAR=EverythignIsAwesome
+- MY_VAR=EverythingIsAwesome
 - NODE_ENV=TEST
 ```
 Интересная часть - это ключ `env:`, где вы можете затем перечислить
