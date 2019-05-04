@@ -11,7 +11,7 @@
 
 [![Build Status](https://travis-ci.org/dwyl/learn-travis.svg?branch=master)](https://travis-ci.org/dwyl/learn-travis)
 [![contributions welcome](https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=flat)](https://github.com/dwyl/learn-travis/issues)
-[![HitCount](https://hits.dwyl.io/dwyl/learn-travis.svg)](https://hits.dwyl.io/dwyl/learn-travis)
+[![HitCount](http://hits.dwyl.io/dwyl/learn-travis.svg)](http://hits.dwyl.io/dwyl/learn-travis)
 
 </div>
 
@@ -443,11 +443,15 @@ in `.travis.yml` file:
 ```yml
 language: elixir
 elixir:
-  - 1.6
+  - 1.8
 env:
   - MIX_ENV=test
 script:
   - mix test
+cache:
+  directories:
+    - _build
+    - deps
 ```
 
 If you need a "_real world example_" `.travis.yml` file
