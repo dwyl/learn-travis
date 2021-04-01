@@ -4,8 +4,7 @@ node_js:
  
  branches:
   only:
-  - GAPTS-DEV
-  - learn-travis
+    - learn-travis
 env:
 - MY_VAR=EverythignIsAwesome
 - NODE_ENV=TEST
