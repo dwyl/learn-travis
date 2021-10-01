@@ -1,22 +1,19 @@
-# Learn Travis
-
 <div align="center">
+    <h1> Learn Travis </h1>
     <a href="https://travis-ci.com/">
-        <img src="https://travis-ci.com/images/logos/Tessa-pride-4.svg" width="175">
+        <img src="https://user-images.githubusercontent.com/194400/135542640-0188648a-d2b1-4a4a-b5a6-b8eb7e7d2bd8.png" width="300">
     </a>
-</div>
-<br />
-
-<div align="center">
+    <p>
+        Our <em><strong>quick guide</strong></em> to 
+        <strong>Travis CI</strong> (<em>Continuous Integration</em>)
+        for <em><strong>complete beginners</strong></em>
+    </p>
 
 [![Build Status](https://travis-ci.org/dwyl/learn-travis.svg?branch=master)](https://travis-ci.org/dwyl/learn-travis)
 [![contributions welcome](https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=flat)](https://github.com/dwyl/learn-travis/issues)
 [![HitCount](http://hits.dwyl.io/dwyl/learn-travis.svg)](http://hits.dwyl.io/dwyl/learn-travis)
 
 </div>
-
-Our ***quick guide*** to **Travis CI** (*Continuous Integration*)
-for ***complete beginners***
 
 ##  Index
 
